@@ -10,7 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ITverse- Custom Web Applications",
+  title: "Syslence- Custom Web Applications",
   description:
     "Custom web application systems for small and medium-sized businesses in Sweden",
 };

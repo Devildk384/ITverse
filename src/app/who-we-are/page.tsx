@@ -67,11 +67,11 @@ export default function WhoWeArePage() {
                 Our Journey
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                The ITverse Story
+                The Syslence Story
               </h2>
               <div className="space-y-4 text-gray-500 dark:text-gray-400">
                 <p>
-                  ITverse was founded with a simple mission: to
+                  Syslence was founded with a simple mission: to
                   provide small and medium-sized businesses in Sweden with
                   high-quality, custom web applications at competitive prices.
                 </p>

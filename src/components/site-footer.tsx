@@ -11,7 +11,7 @@ export function SiteFooter() {
               <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-teal-400 flex items-center justify-center text-white font-bold">
                 IT
               </div>
-              <span className="font-bold text-xl">ITverse</span>
+              <span className="font-bold text-xl">Syslence</span>
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-400">
               Custom web application systems for small and medium-sized
@@ -128,7 +128,7 @@ export function SiteFooter() {
 
         <div className="border-t border-blue-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            © 2025 ITverse. All rights reserved.
+            © 2025 Syslence. All rights reserved.
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <Link

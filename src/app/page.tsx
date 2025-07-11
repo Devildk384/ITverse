@@ -96,7 +96,7 @@ export default function Home() {
                 <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-blue-600/20 to-teal-500/20 rounded-tr-3xl"></div>
                 <Image
                   src={HeroImage}
-                  alt="ITverse Dashboard"
+                  alt="Syslence Dashboard"
                   className="w-full h-auto"
                   width={600}
                   height={500}
@@ -688,7 +688,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;ITverse delivered exactly what we needed.
+                &quot;Syslence delivered exactly what we needed.
                 Their team understood our business requirements perfectly and
                 created a custom solution that has significantly improved our
                 operations.&quot;
@@ -717,7 +717,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;Working with ITverse was a pleasure from start
+                &quot;Working with Syslence was a pleasure from start
                 to finish. Their communication was excellent, and they delivered
                 our project on time and within budget. Highly recommended!&quot;
               </p>
@@ -745,7 +745,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;The booking system ITverse created for our
+                &quot;The booking system Syslence created for our
                 healthcare practice has transformed how we manage appointments.
                 Our staff and patients love it, and it&apos;s saved us countless
                 hours.&quot;

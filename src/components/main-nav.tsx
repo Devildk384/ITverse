@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ToggleTheme } from "./theme-toggle";
+import LogoImage from "@/public/logo.webp";
+import Image from "next/image";
 
 export function MainNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,12 +26,13 @@ export function MainNav() {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-teal-400 flex items-center justify-center text-white font-bold">
-              IT
-            </div>
-            <span className="font-bold text-xl hidden sm:inline-block">
-              ITverse
-            </span>
+            <Image
+                  src={LogoImage}
+                  alt="Syslence Logo"
+                  className="w-full h-auto"
+                  width={180}
+                  height={60}
+                />
           </Link>
         </div>
 
