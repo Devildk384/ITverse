@@ -15,7 +15,7 @@ export function PackageComparison() {
                 Starter Package
               </div>
               <div className="text-xl font-bold mt-2 text-blue-600 dark:text-blue-400">
-                12 000 SEK
+                ₹25,000
               </div>
             </th>
             <th className="p-4 text-center bg-purple-50 dark:bg-purple-900/20 border-b border-gray-200 dark:border-gray-700 relative">
@@ -29,7 +29,7 @@ export function PackageComparison() {
                 Professional Package
               </div>
               <div className="text-xl font-bold mt-2 text-purple-600 dark:text-purple-400">
-                28 000 SEK
+                ₹60,000
               </div>
             </th>
             <th className="p-4 text-center bg-amber-50 dark:bg-amber-900/20 border-b border-gray-200 dark:border-gray-700">
@@ -40,7 +40,7 @@ export function PackageComparison() {
                 Enterprise Package
               </div>
               <div className="text-xl font-bold mt-2 text-amber-600 dark:text-amber-400">
-                From 45 000 SEK
+                From ₹1,00,000
               </div>
             </th>
           </tr>

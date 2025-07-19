@@ -33,20 +33,19 @@ export default function Home() {
             <div className="space-y-8">
               <div className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-700 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
                 <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
-                Swedish Quality
+                Indian Excellence
               </div>
 
               <div>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl mb-4">
                   Custom{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">
-                    Web Solutions
+                    IT Solutions
                   </span>{" "}
-                  for Swedish Businesses
+                  for Global & Indian Businesses
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-[600px]">
-                  High-quality applications at competitive prices thanks to our
-                  unique Swedish-Serbian development model.
+                  High-quality applications at competitive prices, powered by India's world-class IT talent and innovation.
                 </p>
               </div>
 
@@ -111,7 +110,7 @@ export default function Home() {
                   <div>
                     <div className="text-sm font-medium">Trusted Quality</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">
-                      ISO 9001 Certified
+                      ISO 9001 & ISO 27001 Certified
                     </div>
                   </div>
                 </div>
@@ -125,7 +124,7 @@ export default function Home() {
                   <div>
                     <div className="text-sm font-medium">Fast Delivery</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">
-                      2-5 Week Turnaround
+                      2-5 Week Turnaround (India-based delivery)
                     </div>
                   </div>
                 </div>
@@ -142,11 +141,10 @@ export default function Home() {
               Our Services
             </div>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Tailored Web Solutions for Your Business
+              Tailored IT Solutions for Your Business
             </h2>
             <p className="max-w-[800px] text-gray-600 dark:text-gray-400 text-lg">
-              From small business websites to complex enterprise systems, we
-              have a solution for you.
+              From startups and SMEs to large enterprises, we deliver scalable IT solutions trusted by clients in India and worldwide.
             </p>
           </div>
 
@@ -306,7 +304,7 @@ export default function Home() {
                 Satisfaction Rate
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
-                Across Sweden
+                Across India
               </div>
             </div>
 

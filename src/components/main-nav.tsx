@@ -27,12 +27,12 @@ export function MainNav() {
           </button>
           <Link href="/" className="flex items-center space-x-2">
             <Image
-                  src={LogoImage}
-                  alt="Syslence Logo"
-                  className="w-full h-auto"
-                  width={180}
-                  height={60}
-                />
+              src={LogoImage}
+              alt="Syslence Logo"
+              width={100}
+              height={100}
+              style={{ objectFit: 'contain', maxWidth: 100, maxHeight: 100 }}
+            />
           </Link>
         </div>
 

@@ -7,6 +7,7 @@ import {
   Clock,
   MessageSquare,
   CheckCircle,
+  Globe,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -83,10 +84,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <p className="text-gray-500 dark:text-gray-400">
-                        info@itsystemsolutions.se
+                        info@syslence.in
                       </p>
                       <p className="text-gray-500 dark:text-gray-400">
-                        support@itsystemsolutions.se
+                        support@syslence.in
                       </p>
                     </div>
                   </div>
@@ -98,10 +99,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Phone</h3>
                       <p className="text-gray-500 dark:text-gray-400">
-                        +46 70 123 45 67 (Sweden)
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        +381 60 123 45 67 (Serbia)
+                        +91 8887931189
                       </p>
                     </div>
                   </div>
@@ -111,21 +109,27 @@ export default function ContactPage() {
                       <MapPin className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                     </div>
                     <div>
-                      <h3 className="font-medium">Office Locations</h3>
+                      <h3 className="font-medium">Office Location</h3>
                       <div className="space-y-2">
                         <div>
-                          <p className="font-medium">Stockholm, Sweden</p>
+                          <p className="font-medium">Noida, India</p>
                           <p className="text-gray-500 dark:text-gray-400">
-                            Sveavägen 123, 111 57 Stockholm
-                          </p>
-                        </div>
-                        <div>
-                          <p className="font-medium">Belgrade, Serbia</p>
-                          <p className="text-gray-500 dark:text-gray-400">
-                            Bulevar Kralja Aleksandra 123, 11000 Belgrade
+                            12 W 137, Noida, Uttar Pradesh, India
                           </p>
                         </div>
                       </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-full bg-amber-100 p-2 dark:bg-amber-900/30">
+                      <Globe className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium">Address</h3>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        12 W 137, Noida, Uttar Pradesh, India
+                      </p>
                     </div>
                   </div>
 
@@ -136,8 +140,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Office Hours</h3>
                       <p className="text-gray-500 dark:text-gray-400">
-                        Monday - Friday: 9:00 AM - 5:00 PM CET
-                        <br />
+                        Monday - Friday: 9:00 AM - 5:00 PM IST<br />
                         Saturday - Sunday: Closed
                       </p>
                     </div>
@@ -302,16 +305,16 @@ export default function ContactPage() {
                         <SelectValue placeholder="Select your budget range" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="10-20k">
-                          10,000 - 20,000 SEK
-                        </SelectItem>
-                        <SelectItem value="20-50k">
-                          20,000 - 50,000 SEK
+                        <SelectItem value="25-50k">
+                          ₹25,000 - ₹50,000
                         </SelectItem>
                         <SelectItem value="50-100k">
-                          50,000 - 100,000 SEK
+                          ₹50,000 - ₹1,00,000
                         </SelectItem>
-                        <SelectItem value="100k+">100,000+ SEK</SelectItem>
+                        <SelectItem value="1-2lakh">
+                          ₹1,00,000 - ₹2,00,000
+                        </SelectItem>
+                        <SelectItem value="2lakh+">₹2,00,000+</SelectItem>
                         <SelectItem value="not-sure">Not sure yet</SelectItem>
                       </SelectContent>
                     </Select>
@@ -364,7 +367,7 @@ export default function ContactPage() {
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
                       The cost depends on the complexity and scope of your
-                      project. Our packages start at 12,000 SEK for simple
+                      project. Our packages start at ₹25,000 for simple
                       applications. We provide detailed quotes after
                       understanding your specific requirements during our free
                       consultation.

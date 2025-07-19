@@ -317,7 +317,7 @@ export default function WhoWeArePage() {
                 </div>
               </div> */}
               <div className="mt-4 text-center">
-                <h3 className="text-xl font-bold">Adnan Skrijelj</h3>
+                <h3 className="text-xl font-bold">Durgesh</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Founder & CEO
                 </p>

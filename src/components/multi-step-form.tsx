@@ -309,7 +309,7 @@ export function MultiStepForm() {
           <div className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="budget" className="text-sm font-medium">
-                Budget range (SEK)
+                Budget range (INR)
               </label>
               <select
                 id="budget"
@@ -318,10 +318,10 @@ export function MultiStepForm() {
                 <option value="" disabled>
                   Select budget range
                 </option>
-                <option value="10-20k">10,000 - 20,000 SEK</option>
-                <option value="20-30k">20,000 - 30,000 SEK</option>
-                <option value="30-50k">30,000 - 50,000 SEK</option>
-                <option value="50k+">50,000+ SEK</option>
+                <option value="25-50k">₹25,000 - ₹50,000</option>
+                <option value="50-100k">₹50,000 - ₹1,00,000</option>
+                <option value="1-2lakh">₹1,00,000 - ₹2,00,000</option>
+                <option value="2lakh+">₹2,00,000+</option>
               </select>
             </div>
             <div className="space-y-2">

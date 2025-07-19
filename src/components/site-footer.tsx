@@ -70,15 +70,15 @@ export function SiteFooter() {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <span>yourname@example.com</span>
+                <span>info@syslence.in</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <Phone className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <span>+46 70 123 45 67</span>
+                <span>+91 8887931189</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <Globe className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <span>www.yourcompany.se</span>
+                <span>www.syslence.in</span>
               </li>
             </ul>
           </div>

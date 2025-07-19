@@ -340,17 +340,17 @@ export default function BookConsultationPage() {
                                   <SelectValue placeholder="Select your budget range" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                  <SelectItem value="10-20k">
-                                    10,000 - 20,000 SEK
-                                  </SelectItem>
-                                  <SelectItem value="20-50k">
-                                    20,000 - 50,000 SEK
+                                  <SelectItem value="25-50k">
+                                    ₹25,000 - ₹50,000
                                   </SelectItem>
                                   <SelectItem value="50-100k">
-                                    50,000 - 100,000 SEK
+                                    ₹50,000 - ₹1,00,000
                                   </SelectItem>
-                                  <SelectItem value="100k+">
-                                    100,000+ SEK
+                                  <SelectItem value="1-2lakh">
+                                    ₹1,00,000 - ₹2,00,000
+                                  </SelectItem>
+                                  <SelectItem value="2lakh+">
+                                    ₹2,00,000+
                                   </SelectItem>
                                   <SelectItem value="not-sure">
                                     Not sure yet

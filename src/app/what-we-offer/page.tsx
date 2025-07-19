@@ -397,7 +397,7 @@ export default function WhatWeOfferPage() {
                     Starter Package
                   </Badge>
                   <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                    12 000 SEK
+                    ₹25,000
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4">
@@ -488,7 +488,7 @@ export default function WhatWeOfferPage() {
                     Professional Package
                   </Badge>
                   <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                    28 000 SEK
+                    ₹60,000
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4">
@@ -584,7 +584,7 @@ export default function WhatWeOfferPage() {
                     Enterprise Package
                   </Badge>
                   <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
-                    From 45 000 SEK
+                    From ₹1,00,000
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4">
@@ -730,7 +730,7 @@ export default function WhatWeOfferPage() {
                 <thead>
                   <tr className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                     <th className="py-4 px-6 text-left">Feature</th>
-                    <th className="py-4 px-6 text-right">Price (SEK)</th>
+                    <th className="py-4 px-6 text-right">Price (INR)</th>
                     <th className="py-4 px-6 text-center">Details</th>
                   </tr>
                 </thead>
@@ -739,7 +739,7 @@ export default function WhatWeOfferPage() {
                     <td className="py-4 px-6 font-medium">
                       Extra page/interface
                     </td>
-                    <td className="py-4 px-6 text-right">1 500</td>
+                    <td className="py-4 px-6 text-right">₹25,000</td>
                     <td className="py-4 px-6 text-center">
                       <Button
                         variant="ghost"
@@ -753,7 +753,7 @@ export default function WhatWeOfferPage() {
                   </tr>
                   <tr className="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
                     <td className="py-4 px-6 font-medium">PDF generation</td>
-                    <td className="py-4 px-6 text-right">2 000</td>
+                    <td className="py-4 px-6 text-right">₹25,000</td>
                     <td className="py-4 px-6 text-center">
                       <Button
                         variant="ghost"
@@ -767,7 +767,7 @@ export default function WhatWeOfferPage() {
                   </tr>
                   <tr className="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
                     <td className="py-4 px-6 font-medium">API Integration</td>
-                    <td className="py-4 px-6 text-right">2 500 - 5 000</td>
+                    <td className="py-4 px-6 text-right">₹25,000 - ₹50,000</td>
                     <td className="py-4 px-6 text-center">
                       <Button
                         variant="ghost"
@@ -781,7 +781,7 @@ export default function WhatWeOfferPage() {
                   </tr>
                   <tr className="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
                     <td className="py-4 px-6 font-medium">Admin panel</td>
-                    <td className="py-4 px-6 text-right">2 500</td>
+                    <td className="py-4 px-6 text-right">₹25,000</td>
                     <td className="py-4 px-6 text-center">
                       <Button
                         variant="ghost"
@@ -797,7 +797,7 @@ export default function WhatWeOfferPage() {
                     <td className="py-4 px-6 font-medium">
                       Monthly maintenance
                     </td>
-                    <td className="py-4 px-6 text-right">1 500/month</td>
+                    <td className="py-4 px-6 text-right">₹15,000/month</td>
                     <td className="py-4 px-6 text-center">
                       <Button
                         variant="ghost"
@@ -811,7 +811,7 @@ export default function WhatWeOfferPage() {
                   </tr>
                   <tr className="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
                     <td className="py-4 px-6 font-medium">Express delivery</td>
-                    <td className="py-4 px-6 text-right">5 000</td>
+                    <td className="py-4 px-6 text-right">₹50,000</td>
                     <td className="py-4 px-6 text-center">
                       <Button
                         variant="ghost"
