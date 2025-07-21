@@ -45,7 +45,7 @@ export default function Home() {
                   for Global & Indian Businesses
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 max-w-[600px]">
-                  High-quality applications at competitive prices, powered by India's world-class IT talent and innovation.
+                  High-quality applications at competitive prices, powered by India&apos;s world-class IT talent and innovation.
                 </p>
               </div>
 
