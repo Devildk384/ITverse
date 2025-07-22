@@ -84,10 +84,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <p className="text-gray-500 dark:text-gray-400">
-                        info@syslence.in
+                        info@syslence.com
                       </p>
                       <p className="text-gray-500 dark:text-gray-400">
-                        support@syslence.in
+                        support@syslence.com
                       </p>
                     </div>
                   </div>
