@@ -317,7 +317,7 @@ export default function WhoWeArePage() {
                 </div>
               </div> */}
               <div className="mt-4 text-center">
-                <h3 className="text-xl font-bold">Durgesh</h3>
+                <h3 className="text-xl font-bold">Durgesh Kumar</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Founder & CEO
                 </p>
@@ -372,9 +372,9 @@ export default function WhoWeArePage() {
                 </div>
               </div> */}
               <div className="mt-4 text-center">
-                <h3 className="text-xl font-bold">Amar Muric</h3>
+                <h3 className="text-xl font-bold">Shivam Mishra</h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Project Manager
+                  Co-founder & CTO
                 </p>
               </div>
             </div>
