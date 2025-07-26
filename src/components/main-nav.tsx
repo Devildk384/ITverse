@@ -25,15 +25,16 @@ export function MainNav() {
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src={LogoImage}
-              alt="Syslence Logo"
-              width={100}
-              height={100}
-              style={{ objectFit: 'contain', maxWidth: 100, maxHeight: 100 }}
-            />
-          </Link>
+         <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src={LogoImage}
+            alt="Syslence Logo"
+            width={200}
+            height={60}
+            className="w-[150px] h-[60px] md:w-[200px] md:ml-0 -ml-[20px] md:h-[60px] object-contain"
+          />
+        </Link>
+
         </div>
 
         <nav className="hidden lg:flex items-center space-x-6">

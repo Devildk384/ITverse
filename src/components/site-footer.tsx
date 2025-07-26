@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer className="w-full bg-gray-50 dark:bg-gray-900 border-t border-blue-200">
       <div className="container py-12 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ml-[15px] mr-[15px]">
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-teal-400 flex items-center justify-center text-white font-bold">
@@ -127,10 +127,10 @@ export function SiteFooter() {
         </div>
 
         <div className="border-t border-blue-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-sm text-gray-500 dark:text-gray-400 ml-[15px] mr-[15px]">
             © 2025 Syslence. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
+          <div className="flex items-center gap-4 mt-4 md:mt-0 ml-[15px] mr-[15px]">
             <Link
               href="#"
               className="text-sm text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
