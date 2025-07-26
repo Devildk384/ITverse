@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Syslence- Custom Web Applications",
   description:
-    "Custom web application systems for small and medium-sized businesses in Sweden",
+    "Custom web application systems for small and medium-sized businesses in India",
 };
 
 export default function RootLayout({

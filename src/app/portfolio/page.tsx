@@ -51,7 +51,7 @@ export default function PortfolioPage() {
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
               Explore our successful projects and see how we&apos;ve helped
-              businesses across Sweden transform their operations with custom
+              businesses across India transform their operations with custom
               web solutions.
             </p>
           </div>
@@ -178,10 +178,10 @@ export default function PortfolioPage() {
                 <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50">
                   E-commerce
                 </Badge>
-                <h3 className="text-3xl font-bold">SwedishCraft Marketplace</h3>
+                <h3 className="text-3xl font-bold">IndianCraft Marketplace</h3>
               </div>
               <p className="text-gray-500 dark:text-gray-400">
-                A custom e-commerce platform for artisanal Swedish crafts,
+                A custom e-commerce platform for artisanal Indian crafts,
                 featuring secure payments, inventory management, and a
                 sophisticated recommendation engine to boost sales.
               </p>
@@ -259,7 +259,7 @@ export default function PortfolioPage() {
                   width={300}
                   height={300}
                   src="/placeholder.svg?height=600&width=800"
-                  alt="SwedishCraft Marketplace"
+                  alt="IndianCraft Marketplace"
                   className="w-full h-auto"
                 />
               </div>
@@ -396,7 +396,7 @@ export default function PortfolioPage() {
                   InvestSmart Dashboard
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  A financial analytics dashboard for a Swedish investment firm,
+                  A financial analytics dashboard for an Indian investment firm,
                   providing real-time market data and portfolio management
                   tools.
                 </p>
@@ -435,7 +435,7 @@ export default function PortfolioPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">EduLearn Platform</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  An e-learning platform for a Swedish educational institution,
+                  An e-learning platform for an Indian educational institution,
                   featuring course management, interactive lessons, and student
                   progress tracking.
                 </p>
@@ -474,7 +474,7 @@ export default function PortfolioPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">PropertyPro CRM</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  A customer relationship management system for a Swedish real
+                  A customer relationship management system for an Indian real
                   estate agency, streamlining property listings, client
                   interactions, and sales processes.
                 </p>
@@ -513,7 +513,7 @@ export default function PortfolioPage() {
                 <h3 className="text-xl font-bold mb-2">HotelHub Booking</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   A comprehensive booking and management system for a chain of
-                  boutique hotels in Sweden, featuring reservation management
+                  boutique hotels in India, featuring reservation management
                   and guest services.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -551,7 +551,7 @@ export default function PortfolioPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">ProductionPro ERP</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  An enterprise resource planning system for a Swedish
+                  An enterprise resource planning system for an Indian
                   manufacturing company, optimizing production processes,
                   inventory, and supply chain management.
                 </p>
@@ -590,7 +590,7 @@ export default function PortfolioPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">SecureAccess Portal</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  A secure access management system for a Swedish security firm,
+                  A secure access management system for an Indian security firm,
                   featuring multi-factor authentication, access control, and
                   comprehensive audit logging.
                 </p>

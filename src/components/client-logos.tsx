@@ -2,7 +2,7 @@ export function ClientLogos() {
   return (
     <div className="w-full py-8">
       <h3 className="text-center text-lg font-medium text-gray-600 dark:text-gray-400 mb-8">
-        Trusted by businesses across Sweden
+        Trusted by businesses across India
       </h3>
 
       <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 grayscale opacity-70">

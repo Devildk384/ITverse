@@ -72,7 +72,7 @@ export default function WhoWeArePage() {
               <div className="space-y-4 text-gray-500 dark:text-gray-400">
                 <p>
                   Syslence was founded with a simple mission: to
-                  provide small and medium-sized businesses in Sweden with
+                  provide small and medium-sized businesses in India with
                   high-quality, custom web applications at competitive prices.
                 </p>
                 <p>
@@ -88,7 +88,7 @@ export default function WhoWeArePage() {
                   perfect the balance of quality and cost-effectiveness.
                 </p>
                 <p>
-                  Today, we continue to help businesses across Sweden transform
+                  Today, we continue to help businesses across India transform
                   their operations with custom web applications tailored to
                   their specific needs.
                 </p>
@@ -262,7 +262,7 @@ export default function WhoWeArePage() {
               The People Behind Our Success
             </h2>
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Our talented team combines Swedish management with international
+              Our talented team combines Indian management with international
               expertise
             </p>
           </div>

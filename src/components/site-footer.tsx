@@ -14,8 +14,7 @@ export function SiteFooter() {
               <span className="font-bold text-xl">Syslence</span>
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Custom web application systems for small and medium-sized
-              businesses in Sweden.
+              Custom web application systems for small and medium-sized businesses in India.
             </p>
           </div>
 
@@ -70,7 +69,7 @@ export function SiteFooter() {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <Mail className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <span>info@syslence.in</span>
+                <span>info@syslence.com</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <Phone className="h-4 w-4 text-blue-600 dark:text-blue-400" />
@@ -78,7 +77,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <Globe className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <span>www.syslence.in</span>
+                <span>www.syslence.com</span>
               </li>
             </ul>
           </div>
