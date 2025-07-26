@@ -92,7 +92,7 @@ export default function WhatWeOfferPage() {
               <TabsTrigger value="database" className="py-3">
                 Database
               </TabsTrigger>
-              <TabsTrigger value="cloud" className="py-3 md:">
+              <TabsTrigger value="cloud" className="py-3">
                 Cloud & DevOps
               </TabsTrigger>
             </TabsList>
