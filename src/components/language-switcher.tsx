@@ -11,7 +11,7 @@ export default function LanguageSwitcher() {
           key={lng}
           onClick={() => router.push(asPath, asPath, { locale: lng })}
           disabled={locale === lng}
-          className={locale === lng ? "font-bold" : ""}
+          className={`${locale === lng ? "font-bold" : ""} cursor-pointer`}
         >
           {lng.toUpperCase()}
         </button>

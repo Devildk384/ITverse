@@ -20,7 +20,7 @@ export function MainNav() {
       <div className="container flex h-16 items-center justify-between mx-auto">
         <div className="flex gap-2 items-center">
           <button
-            className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
