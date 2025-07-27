@@ -78,7 +78,6 @@ export default function BookConsultationPage() {
 
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: "" }));
     }
@@ -119,7 +118,7 @@ export default function BookConsultationPage() {
       } else {
         const selectedDate = new Date(formData.preferredDate);
         const today = new Date();
-        today.setHours(0, 0, 0, 0); // Reset time to start of day
+        today.setHours(0, 0, 0, 0);
         
         if (selectedDate < today) {
           newErrors.preferredDate = "Please select a future date";
@@ -157,7 +156,6 @@ export default function BookConsultationPage() {
     setApiResponse(null);
 
     try {
-      // Convert date format from YYYY-MM-DD to DD-MM-YYYY
       const formattedData = {
         ...formData,
         preferredDate: formData.preferredDate 
@@ -199,6 +197,8 @@ export default function BookConsultationPage() {
       
       if (error.code === 'ECONNABORTED') {
         errorMessage = "Request timed out. Please check your connection and try again.";
+      } else if (error.code === 'ERR_NETWORK') {
+        errorMessage = "Network error. Please check your internet connection and try again. If the problem persists, the API server might be down.";
       } else if (error.response?.status === 400) {
         errorMessage = "Invalid data. Please check your form inputs.";
       } else if (error.response?.status === 500) {
@@ -213,6 +213,20 @@ export default function BookConsultationPage() {
       });
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const testApiConnectivity = async () => {
+    try {
+      console.log("Testing API connectivity...");
+      const response = await axios.get("https://5ahinmt4vf.execute-api.eu-north-1.amazonaws.com/prod", {
+        timeout: 5000,
+      });
+      console.log("API is reachable:", response.status);
+      alert("API is reachable! Status: " + response.status);
+    } catch (error: any) {
+      console.error("API connectivity test failed:", error);
+      alert("API connectivity test failed: " + error.message);
     }
   };
 
@@ -239,7 +253,6 @@ export default function BookConsultationPage() {
     setErrors({});
   };
 
-  // Animation variants
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
@@ -344,7 +357,6 @@ export default function BookConsultationPage() {
       <section className="w-full py-16 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="max-w-4xl mx-auto">
-            {/* Progress Bar */}
             <div className="mb-8">
               <div className="flex justify-between items-center mb-4">
                 <div className="flex items-center gap-2">
@@ -382,7 +394,6 @@ export default function BookConsultationPage() {
               </div>
             </div>
 
-            {/* Form Card */}
             <Card className="border-blue-100 dark:border-blue-800 shadow-lg">
               <CardContent className="p-8">
                 {apiResponse && !apiResponse.success && (
@@ -402,7 +413,6 @@ export default function BookConsultationPage() {
                     exit="exit"
                     className="space-y-6"
                   >
-                    {/* Step 1: Your Info */}
                     {step === 1 && (
                       <div>
                         <div className="mb-6">
@@ -487,7 +497,6 @@ export default function BookConsultationPage() {
                       </div>
                     )}
 
-                    {/* Step 2: Project Details */}
                     {step === 2 && (
                       <div>
                         <div className="mb-6">
@@ -699,7 +708,6 @@ export default function BookConsultationPage() {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Navigation Buttons */}
                 <div className="flex justify-between mt-8">
                   <Button
                     variant="outline"
@@ -710,23 +718,34 @@ export default function BookConsultationPage() {
                     <ArrowLeft className="h-4 w-4" />
                     Back
                   </Button>
-                  <Button
-                    onClick={handleNextStep}
-                    disabled={isSubmitting}
-                    className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Booking...
-                      </>
-                    ) : (
-                      <>
-                        {step === 3 ? "Book Consultation" : "Next"}
-                        {step !== 3 && <ArrowRight className="h-4 w-4" />}
-                      </>
+                  <div className="flex gap-2">
+                    {step === 3 && (
+                      <Button
+                        variant="outline"
+                        onClick={testApiConnectivity}
+                        className="text-xs"
+                      >
+                        Test API
+                      </Button>
                     )}
-                  </Button>
+                    <Button
+                      onClick={handleNextStep}
+                      disabled={isSubmitting}
+                      className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          Booking...
+                        </>
+                      ) : (
+                        <>
+                          {step === 3 ? "Book Consultation" : "Next"}
+                          {step !== 3 && <ArrowRight className="h-4 w-4" />}
+                        </>
+                      )}
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
