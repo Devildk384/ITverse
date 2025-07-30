@@ -1,3 +1,7 @@
+/**
+ * @author Shivam Mishra
+ */
+
 "use client";
 
 import { useState } from "react";
@@ -8,6 +12,7 @@ import {
   Users,
   MessageSquare,
   CheckCircle,
+  AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,21 +28,159 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { motion, AnimatePresence, MotionStyle } from "framer-motion";
+import { ConsultationFormData } from "@/interfaces/form";
+import { 
+  validateConsultationForm, 
+  submitConsultationForm 
+} from "@/lib/apiService";
+import {
+  CONSULTATION_TIME_SLOTS,
+  PROJECT_TYPES,
+  BUDGET_RANGES,
+  TIMELINE_OPTIONS,
+  TIMEZONE_OPTIONS,
+  COMMUNICATION_METHODS,
+  VALIDATION_RULES,
+  FORM_LABELS,
+  FORM_PLACEHOLDERS,
+  ERROR_MESSAGES
+} from "@/lib/constants/form";
 
+interface ValidationErrors {
+  [key: string]: string;
+}
+
+/**
+ * Book consultation page component with multi-step form and API integration
+ * @returns JSX element for book consultation page
+ */
 export default function BookConsultationPage() {
   const [step, setStep] = useState(1);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [direction, setDirection] = useState(0); // 1 for forward, -1 for backward
+  const [direction, setDirection] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<ValidationErrors>({});
 
+  const [formData, setFormData] = useState<ConsultationFormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    projectType: "",
+    budget: "",
+    timeline: "",
+    description: "",
+    preferredDate: "",
+    preferredTime: "",
+    timezone: "Central European Time (CET)",
+    alternativeTime: "",
+    communicationMethod: "Video call (Zoom/Teams)",
+  });
+
+  /**
+   * Gets current date in YYYY-MM-DD format for min attribute
+   * @returns Current date string
+   */
+  const getCurrentDate = (): string => {
+    return new Date().toISOString().split('T')[0];
+  };
+
+
+
+  /**
+   * Updates form data and clears related errors
+   * @param field - Form field to update
+   * @param value - New value for the field
+   */
+  const updateFormData = (field: keyof ConsultationFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+
+
+  };
+
+
+
+  /**
+   * Validates current step using step-specific validation
+   * @param currentStep - Current step number to validate
+   * @returns boolean indicating if validation passed
+   */
+  const validateStep = (currentStep: number): boolean => {
+    const newErrors: ValidationErrors = {};
+
+    if (currentStep === 1) {
+      // Step 1: Personal Information
+      if (!formData.firstName.trim() || formData.firstName.trim().length < VALIDATION_RULES.MIN_NAME_LENGTH) {
+        newErrors.firstName = ERROR_MESSAGES.MIN_LENGTH('First name', VALIDATION_RULES.MIN_NAME_LENGTH);
+      }
+      if (!formData.lastName.trim() || formData.lastName.trim().length < VALIDATION_RULES.MIN_NAME_LENGTH) {
+        newErrors.lastName = ERROR_MESSAGES.MIN_LENGTH('Last name', VALIDATION_RULES.MIN_NAME_LENGTH);
+      }
+      if (!formData.email.trim()) {
+        newErrors.email = ERROR_MESSAGES.REQUIRED_FIELD;
+      } else if (!VALIDATION_RULES.EMAIL_REGEX.test(formData.email)) {
+        newErrors.email = ERROR_MESSAGES.INVALID_EMAIL;
+      }
+      if (!formData.phone.trim()) {
+        newErrors.phone = ERROR_MESSAGES.REQUIRED_FIELD;
+      } else if (!VALIDATION_RULES.PHONE_REGEX.test(formData.phone.replace(/\s/g, ''))) {
+        newErrors.phone = ERROR_MESSAGES.INVALID_PHONE;
+      }
+    }
+
+    if (currentStep === 2) {
+      // Step 2: Project Details
+      if (!formData.projectType) {
+        newErrors.projectType = ERROR_MESSAGES.SELECT_OPTION;
+      }
+      if (!formData.budget) {
+        newErrors.budget = ERROR_MESSAGES.SELECT_OPTION;
+      }
+      if (!formData.timeline) {
+        newErrors.timeline = ERROR_MESSAGES.SELECT_OPTION;
+      }
+      if (!formData.description.trim() || formData.description.trim().length < VALIDATION_RULES.MIN_DESCRIPTION_LENGTH) {
+        newErrors.description = ERROR_MESSAGES.MIN_LENGTH('Description', VALIDATION_RULES.MIN_DESCRIPTION_LENGTH);
+      }
+    }
+
+    if (currentStep === 3) {
+      // Step 3: Scheduling
+      if (!formData.preferredDate) {
+        newErrors.preferredDate = ERROR_MESSAGES.SELECT_OPTION;
+      }
+      
+      if (!formData.preferredTime) {
+        newErrors.preferredTime = ERROR_MESSAGES.SELECT_OPTION;
+      }
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  /**
+   * Handles navigation to next step or form submission
+   */
   const handleNextStep = () => {
     if (step < 3) {
-      setDirection(1);
-      setStep(step + 1);
+      if (validateStep(step)) {
+        setDirection(1);
+        setStep(step + 1);
+      }
     } else {
-      setFormSubmitted(true);
+      // On step 3, call handleSubmit directly to bypass validateStep issues
+      handleSubmit();
     }
   };
 
+  /**
+   * Handles navigation to previous step
+   */
   const handlePrevStep = () => {
     if (step > 1) {
       setDirection(-1);
@@ -45,7 +188,45 @@ export default function BookConsultationPage() {
     }
   };
 
-  // Animation variants for horizontal sliding with constant opacity
+  /**
+   * Submits consultation form using common API service
+   */
+  const handleSubmit = async () => {
+    // Check if already submitting
+    if (isSubmitting) {
+      return;
+    }
+    
+    // Validate all required fields before submission
+    const validation = validateConsultationForm(formData);
+    
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const response = await submitConsultationForm(formData);
+      
+      if (response.success) {
+        setFormSubmitted(true);
+      } else {
+        setErrors({ submit: response.message });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrors({ submit: 'Failed to submit form. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+
+
+
+
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
@@ -116,6 +297,7 @@ export default function BookConsultationPage() {
                     Math.random() * 10 + 15
                   }s ease-in-out infinite`,
                   animationDelay: `${Math.random() * 5}s`,
+                  willChange: "transform",
                 }}
               />
             ))}
@@ -196,6 +378,13 @@ export default function BookConsultationPage() {
 
                   <Card className="border-0 shadow-lg overflow-hidden">
                     <CardContent className="p-8 relative">
+                      {errors.submit && (
+                        <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-center gap-2">
+                          <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
+                          <span className="text-red-700 dark:text-red-300">{errors.submit}</span>
+                        </div>
+                      )}
+
                       <AnimatePresence
                         mode="wait"
                         custom={direction}
@@ -221,37 +410,73 @@ export default function BookConsultationPage() {
 
                             <div className="grid grid-cols-2 gap-6">
                               <div className="space-y-2">
-                                <Label htmlFor="first-name">First name</Label>
+                                <Label htmlFor="first-name">First name *</Label>
                                 <Input
                                   id="first-name"
                                   placeholder="Enter your first name"
+                                  value={formData.firstName}
+                                  onChange={(e) => updateFormData('firstName', e.target.value)}
+                                  className={errors.firstName ? "border-red-500 focus:border-red-500" : ""}
                                 />
+                                {errors.firstName && (
+                                  <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                    <AlertCircle className="h-4 w-4" />
+                                    {errors.firstName}
+                                  </p>
+                                )}
                               </div>
                               <div className="space-y-2">
-                                <Label htmlFor="last-name">Last name</Label>
+                                <Label htmlFor="last-name">Last name *</Label>
                                 <Input
                                   id="last-name"
                                   placeholder="Enter your last name"
+                                  value={formData.lastName}
+                                  onChange={(e) => updateFormData('lastName', e.target.value)}
+                                  className={errors.lastName ? "border-red-500 focus:border-red-500" : ""}
                                 />
+                                {errors.lastName && (
+                                  <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                    <AlertCircle className="h-4 w-4" />
+                                    {errors.lastName}
+                                  </p>
+                                )}
                               </div>
                             </div>
 
                             <div className="space-y-2">
-                              <Label htmlFor="email">Email</Label>
+                              <Label htmlFor="email">Email *</Label>
                               <Input
                                 id="email"
                                 type="email"
                                 placeholder="Enter your email"
+                                value={formData.email}
+                                onChange={(e) => updateFormData('email', e.target.value)}
+                                className={errors.email ? "border-red-500 focus:border-red-500" : ""}
                               />
+                              {errors.email && (
+                                <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                  <AlertCircle className="h-4 w-4" />
+                                  {errors.email}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
-                              <Label htmlFor="phone">Phone</Label>
+                              <Label htmlFor="phone">Phone *</Label>
                               <Input
                                 id="phone"
                                 type="tel"
                                 placeholder="Enter your phone number"
+                                value={formData.phone}
+                                onChange={(e) => updateFormData('phone', e.target.value)}
+                                className={errors.phone ? "border-red-500 focus:border-red-500" : ""}
                               />
+                              {errors.phone && (
+                                <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                  <AlertCircle className="h-4 w-4" />
+                                  {errors.phone}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
@@ -261,6 +486,8 @@ export default function BookConsultationPage() {
                               <Input
                                 id="company"
                                 placeholder="Enter your company name"
+                                value={formData.company}
+                                onChange={(e) => updateFormData('company', e.target.value)}
                               />
                             </div>
                           </motion.div>
@@ -286,116 +513,94 @@ export default function BookConsultationPage() {
 
                             <div className="space-y-2">
                               <Label>
-                                What type of solution are you looking for?
+                                What type of solution are you looking for? *
                               </Label>
                               <RadioGroup
-                                defaultValue="website"
+                                value={formData.projectType}
+                                onValueChange={(value) => updateFormData('projectType', value)}
                                 className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2"
                               >
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem
-                                    value="website"
-                                    id="website"
-                                  />
-                                  <Label htmlFor="website">Website</Label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem
-                                    value="web-app"
-                                    id="web-app"
-                                  />
-                                  <Label htmlFor="web-app">
-                                    Web Application
-                                  </Label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem
-                                    value="mobile-app"
-                                    id="mobile-app"
-                                  />
-                                  <Label htmlFor="mobile-app">Mobile App</Label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem
-                                    value="e-commerce"
-                                    id="e-commerce"
-                                  />
-                                  <Label htmlFor="e-commerce">E-commerce</Label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem value="crm" id="crm" />
-                                  <Label htmlFor="crm">CRM/ERP System</Label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem value="other" id="other" />
-                                  <Label htmlFor="other">Other</Label>
-                                </div>
+                                {PROJECT_TYPES.map((type) => (
+                                  <div key={type.value} className="flex items-center space-x-2">
+                                    <RadioGroupItem
+                                      value={type.value}
+                                      id={type.value}
+                                    />
+                                    <Label htmlFor={type.value}>{type.label}</Label>
+                                  </div>
+                                ))}
                               </RadioGroup>
+                              {errors.projectType && (
+                                <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                  <AlertCircle className="h-4 w-4" />
+                                  {errors.projectType}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
-                              <Label htmlFor="budget">Approximate budget</Label>
-                              <Select>
-                                <SelectTrigger>
+                              <Label htmlFor="budget">Approximate budget *</Label>
+                              <Select value={formData.budget} onValueChange={(value) => updateFormData('budget', value)}>
+                                <SelectTrigger className={errors.budget ? "border-red-500 focus:border-red-500" : ""}>
                                   <SelectValue placeholder="Select your budget range" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                  <SelectItem value="25-50k">
-                                    ₹25,000 - ₹50,000
-                                  </SelectItem>
-                                  <SelectItem value="50-100k">
-                                    ₹50,000 - ₹1,00,000
-                                  </SelectItem>
-                                  <SelectItem value="1-2lakh">
-                                    ₹1,00,000 - ₹2,00,000
-                                  </SelectItem>
-                                  <SelectItem value="2lakh+">
-                                    ₹2,00,000+
-                                  </SelectItem>
-                                  <SelectItem value="not-sure">
-                                    Not sure yet
-                                  </SelectItem>
+                                  {BUDGET_RANGES.map((range) => (
+                                    <SelectItem key={range.value} value={range.value}>
+                                      {range.label}
+                                    </SelectItem>
+                                  ))}
                                 </SelectContent>
                               </Select>
+                              {errors.budget && (
+                                <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                  <AlertCircle className="h-4 w-4" />
+                                  {errors.budget}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
                               <Label htmlFor="timeline">
-                                Expected timeline
+                                Expected timeline *
                               </Label>
-                              <Select>
-                                <SelectTrigger>
+                              <Select value={formData.timeline} onValueChange={(value) => updateFormData('timeline', value)}>
+                                <SelectTrigger className={errors.timeline ? "border-red-500 focus:border-red-500" : ""}>
                                   <SelectValue placeholder="Select your timeline" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                  <SelectItem value="asap">
-                                    As soon as possible
-                                  </SelectItem>
-                                  <SelectItem value="1-month">
-                                    Within 1 month
-                                  </SelectItem>
-                                  <SelectItem value="3-months">
-                                    Within 3 months
-                                  </SelectItem>
-                                  <SelectItem value="6-months">
-                                    Within 6 months
-                                  </SelectItem>
-                                  <SelectItem value="flexible">
-                                    Flexible
-                                  </SelectItem>
+                                  {TIMELINE_OPTIONS.map((option) => (
+                                    <SelectItem key={option.value} value={option.value}>
+                                      {option.label}
+                                    </SelectItem>
+                                  ))}
                                 </SelectContent>
                               </Select>
+                              {errors.timeline && (
+                                <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                  <AlertCircle className="h-4 w-4" />
+                                  {errors.timeline}
+                                </p>
+                              )}
                             </div>
 
                             <div className="space-y-2">
                               <Label htmlFor="description">
-                                Project description
+                                Project description *
                               </Label>
                               <Textarea
                                 id="description"
                                 placeholder="Please describe your project, goals, and any specific requirements"
-                                className="min-h-[120px]"
+                                className={`min-h-[120px] ${errors.description ? "border-red-500 focus:border-red-500" : ""}`}
+                                value={formData.description}
+                                onChange={(e) => updateFormData('description', e.target.value)}
                               />
+                              {errors.description && (
+                                <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                  <AlertCircle className="h-4 w-4" />
+                                  {errors.description}
+                                </p>
+                              )}
                             </div>
                           </motion.div>
                         )}
@@ -420,62 +625,72 @@ export default function BookConsultationPage() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                               <div className="space-y-2">
-                                <Label htmlFor="date">Preferred date</Label>
-                                <Input id="date" type="date" />
+                                <Label htmlFor="date">Preferred date *</Label>
+                                {formData.preferredDate && (
+                                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                                    Selected: {new Date(formData.preferredDate).toLocaleDateString()}
+                                  </p>
+                                )}
+                                <Input 
+                                  id="date" 
+                                  type="date" 
+                                  min={getCurrentDate()}
+                                  value={formData.preferredDate}
+                                  onChange={(e) => updateFormData('preferredDate', e.target.value)}
+                                  className={errors.preferredDate ? "border-red-500 focus:border-red-500" : ""}
+                                />
+                                {errors.preferredDate && (
+                                  <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                    <AlertCircle className="h-4 w-4" />
+                                    {errors.preferredDate}
+                                  </p>
+                                )}
                               </div>
                               <div className="space-y-2">
-                                <Label htmlFor="time">Preferred time</Label>
-                                <Select>
-                                  <SelectTrigger>
+                                <Label htmlFor="time">Preferred time *</Label>
+
+                                <Select 
+                                  value={formData.preferredTime} 
+                                  onValueChange={(value) => updateFormData('preferredTime', value)}
+
+                                >
+                                  <SelectTrigger className={errors.preferredTime ? "border-red-500 focus:border-red-500" : ""}>
                                     <SelectValue placeholder="Select a time" />
                                   </SelectTrigger>
                                   <SelectContent>
-                                    <SelectItem value="9:00">
-                                      9:00 AM
-                                    </SelectItem>
-                                    <SelectItem value="10:00">
-                                      10:00 AM
-                                    </SelectItem>
-                                    <SelectItem value="11:00">
-                                      11:00 AM
-                                    </SelectItem>
-                                    <SelectItem value="13:00">
-                                      1:00 PM
-                                    </SelectItem>
-                                    <SelectItem value="14:00">
-                                      2:00 PM
-                                    </SelectItem>
-                                    <SelectItem value="15:00">
-                                      3:00 PM
-                                    </SelectItem>
-                                    <SelectItem value="16:00">
-                                      4:00 PM
-                                    </SelectItem>
+                                    {CONSULTATION_TIME_SLOTS.map((timeSlot) => {
+                                      return (
+                                        <SelectItem 
+                                          key={timeSlot.value} 
+                                          value={timeSlot.value}
+                                        >
+                                          {timeSlot.label}
+                                        </SelectItem>
+                                      );
+                                    })}
                                   </SelectContent>
                                 </Select>
+                                {errors.preferredTime && (
+                                  <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                                    <AlertCircle className="h-4 w-4" />
+                                    {errors.preferredTime}
+                                  </p>
+                                )}
                               </div>
                             </div>
 
                             <div className="space-y-2">
                               <Label htmlFor="timezone">Your timezone</Label>
-                              <Select defaultValue="CET">
+                              <Select value={formData.timezone} onValueChange={(value) => updateFormData('timezone', value)}>
                                 <SelectTrigger>
                                   <SelectValue placeholder="Select your timezone" />
                                 </SelectTrigger>
                                 <SelectContent>
-                                  <SelectItem value="CET">
-                                    Central European Time (CET)
-                                  </SelectItem>
-                                  <SelectItem value="GMT">
-                                    Greenwich Mean Time (GMT)
-                                  </SelectItem>
-                                  <SelectItem value="EST">
-                                    Eastern Standard Time (EST)
-                                  </SelectItem>
-                                  <SelectItem value="PST">
-                                    Pacific Standard Time (PST)
-                                  </SelectItem>
-                                  <SelectItem value="other">Other</SelectItem>
+                                  {TIMEZONE_OPTIONS.map((option) => (
+                                    <SelectItem key={option.value} value={option.value}>
+                                      {option.label}
+                                    </SelectItem>
+                                  ))}
                                 </SelectContent>
                               </Select>
                             </div>
@@ -488,6 +703,8 @@ export default function BookConsultationPage() {
                                 id="alternative"
                                 placeholder="If you have alternative dates/times that work for you, please list them here"
                                 className="min-h-[80px]"
+                                value={formData.alternativeTime}
+                                onChange={(e) => updateFormData('alternativeTime', e.target.value)}
                               />
                             </div>
 
@@ -496,28 +713,16 @@ export default function BookConsultationPage() {
                                 Preferred communication method
                               </Label>
                               <RadioGroup
-                                defaultValue="video"
+                                value={formData.communicationMethod}
+                                onValueChange={(value) => updateFormData('communicationMethod', value)}
                                 className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2"
                               >
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem value="video" id="video" />
-                                  <Label htmlFor="video">
-                                    Video call (Zoom/Teams)
-                                  </Label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem value="phone" id="phone" />
-                                  <Label htmlFor="phone">Phone call</Label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                  <RadioGroupItem
-                                    value="in-person"
-                                    id="in-person"
-                                  />
-                                  <Label htmlFor="in-person">
-                                    In-person (Stockholm)
-                                  </Label>
-                                </div>
+                                {COMMUNICATION_METHODS.map((method) => (
+                                  <div key={method.value} className="flex items-center space-x-2">
+                                    <RadioGroupItem value={method.value} id={method.value} />
+                                    <Label htmlFor={method.value}>{method.label}</Label>
+                                  </div>
+                                ))}
                               </RadioGroup>
                             </div>
                           </motion.div>
@@ -533,10 +738,17 @@ export default function BookConsultationPage() {
                           <div></div>
                         )}
                         <Button
-                          onClick={handleNextStep}
-                          className="bg-gradient-to-r text-white from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700"
+                          onClick={() => {
+                            if (step === 3) {
+                              handleSubmit();
+                            } else {
+                              handleNextStep();
+                            }
+                          }}
+                          disabled={isSubmitting}
+                          className="bg-gradient-to-r text-white from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 disabled:opacity-50"
                         >
-                          {step < 3 ? "Continue" : "Submit Request"}
+                          {isSubmitting ? "Submitting..." : step < 3 ? "Continue" : "Submit Request"}
                         </Button>
                       </div>
                     </CardContent>

@@ -1,3 +1,10 @@
+/**
+ * @author Shivam Mishra
+ */
+
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,11 +15,11 @@ import {
   MessageSquare,
   CheckCircle,
   Globe,
+  AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import {
@@ -22,8 +29,95 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ContactFormData } from "@/interfaces/form";
+import { 
+  validateContactForm, 
+  submitContactForm 
+} from "@/lib/apiService";
+import {
+  INTEREST_OPTIONS,
+  CONTACT_BUDGET_RANGES,
+  VALIDATION_RULES,
+  FORM_LABELS,
+  FORM_PLACEHOLDERS,
+  ERROR_MESSAGES
+} from "@/lib/constants/form";
 
+/**
+ * Contact page component with form validation and API integration
+ * @returns JSX element for contact page
+ */
 export default function ContactPage() {
+  const [formData, setFormData] = useState<ContactFormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    interest: "",
+    budget: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  /**
+   * Updates form data and clears related errors
+   * @param field - Form field to update
+   * @param value - New value for the field
+   */
+  const updateFormData = (field: keyof ContactFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+  };
+
+  /**
+   * Handles form submission with validation and API call
+   * @param e - Form submission event
+   */
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const validation = validateContactForm(formData);
+    
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const response = await submitContactForm(formData);
+      
+      if (response.success) {
+        setIsSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          interest: "",
+          budget: "",
+          message: "",
+        });
+      } else {
+        setErrors({ submit: response.message });
+      }
+    } catch (error) {
+      console.error('Error in contact form submission:', error);
+      setErrors({ submit: 'Failed to submit form. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+
+
   return (
     <>
       <section className="relative overflow-hidden py-20 md:py-28">
@@ -44,6 +138,7 @@ export default function ContactPage() {
                     Math.random() * 10 + 15
                   }s ease-in-out infinite`,
                   animationDelay: `${Math.random() * 5}s`,
+                  willChange: "transform",
                 }}
               />
             ))}
@@ -203,136 +298,162 @@ export default function ContactPage() {
                   Send Us a Message
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="first-name">First name</Label>
-                      <Input
-                        id="first-name"
-                        className="border-blue-200 dark:border-blue-800"
-                        placeholder="Enter your first name"
-                      />
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {errors.submit && (
+                    <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-center gap-2">
+                      <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
+                      <span className="text-red-700 dark:text-red-300">{errors.submit}</span>
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="last-name">Last name</Label>
-                      <Input
-                        id="last-name"
-                        className="border-blue-200 dark:border-blue-800"
-                        placeholder="Enter your last name"
-                      />
+                  )}
+
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="first-name">First name *</Label>
+                        <Input
+                          id="first-name"
+                          className={`border-blue-200 dark:border-blue-800 ${errors.firstName ? "border-red-500 focus:border-red-500" : ""}`}
+                          placeholder="Enter your first name"
+                          value={formData.firstName}
+                          onChange={(e) => updateFormData('firstName', e.target.value)}
+                        />
+                        {errors.firstName && (
+                          <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                            <AlertCircle className="h-4 w-4" />
+                            {errors.firstName}
+                          </p>
+                        )}
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="last-name">Last name *</Label>
+                        <Input
+                          id="last-name"
+                          className={`border-blue-200 dark:border-blue-800 ${errors.lastName ? "border-red-500 focus:border-red-500" : ""}`}
+                          placeholder="Enter your last name"
+                          value={formData.lastName}
+                          onChange={(e) => updateFormData('lastName', e.target.value)}
+                        />
+                        {errors.lastName && (
+                          <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                            <AlertCircle className="h-4 w-4" />
+                            {errors.lastName}
+                          </p>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      className="border-blue-200 dark:border-blue-800"
-                      placeholder="Enter your email"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email *</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        className={`border-blue-200 dark:border-blue-800 ${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
+                        placeholder="Enter your email"
+                        value={formData.email}
+                        onChange={(e) => updateFormData('email', e.target.value)}
+                      />
+                      {errors.email && (
+                        <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                          <AlertCircle className="h-4 w-4" />
+                          {errors.email}
+                        </p>
+                      )}
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      className="border-blue-200 dark:border-blue-800"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone *</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        className={`border-blue-200 dark:border-blue-800 ${errors.phone ? "border-red-500 focus:border-red-500" : ""}`}
+                        placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={(e) => updateFormData('phone', e.target.value)}
+                      />
+                      {errors.phone && (
+                        <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                          <AlertCircle className="h-4 w-4" />
+                          {errors.phone}
+                        </p>
+                      )}
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label>What are you interested in?</Label>
-                    <RadioGroup
-                      defaultValue="custom-web-app"
-                      className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2"
+                    <div className="space-y-2">
+                      <Label>What are you interested in? *</Label>
+                      <RadioGroup
+                        value={formData.interest}
+                        onValueChange={(value) => updateFormData('interest', value)}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2"
+                      >
+                        {INTEREST_OPTIONS.map((option) => (
+                          <div key={option.value} className="flex items-center space-x-2">
+                            <RadioGroupItem
+                              value={option.value}
+                              id={option.value}
+                            />
+                            <Label htmlFor={option.value}>
+                              {option.label}
+                            </Label>
+                          </div>
+                        ))}
+                      </RadioGroup>
+                      {errors.interest && (
+                        <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                          <AlertCircle className="h-4 w-4" />
+                          {errors.interest}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="budget">Approximate budget *</Label>
+                      <Select value={formData.budget} onValueChange={(value) => updateFormData('budget', value)}>
+                        <SelectTrigger className={errors.budget ? "border-red-500 focus:border-red-500" : ""}>
+                          <SelectValue placeholder="Select your budget range" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {CONTACT_BUDGET_RANGES.map((range) => (
+                            <SelectItem key={range.value} value={range.value}>
+                              {range.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      {errors.budget && (
+                        <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                          <AlertCircle className="h-4 w-4" />
+                          {errors.budget}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        className={`min-h-[120px] border-blue-200 dark:border-blue-800 ${errors.message ? "border-red-500 focus:border-red-500" : ""}`}
+                        placeholder="Tell us about your project and requirements"
+                        value={formData.message}
+                        onChange={(e) => updateFormData('message', e.target.value)}
+                      />
+                      {errors.message && (
+                        <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                          <AlertCircle className="h-4 w-4" />
+                          {errors.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <Button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white disabled:opacity-50"
                     >
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="custom-web-app"
-                          id="custom-web-app"
-                        />
-                        <Label htmlFor="custom-web-app">
-                          Custom Web Application
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="database-solution"
-                          id="database-solution"
-                        />
-                        <Label htmlFor="database-solution">
-                          Database Solution
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="api-integration"
-                          id="api-integration"
-                        />
-                        <Label htmlFor="api-integration">API Integration</Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="analytics-reporting"
-                          id="analytics-reporting"
-                        />
-                        <Label htmlFor="analytics-reporting">
-                          Analytics & Reporting
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem
-                          value="customer-portal"
-                          id="customer-portal"
-                        />
-                        <Label htmlFor="customer-portal">Customer Portal</Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="other" id="other" />
-                        <Label htmlFor="other">Other</Label>
-                      </div>
-                    </RadioGroup>
+                      {isSubmitting ? "Sending..." : "Contact us"}
+                    </Button>
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="budget">Approximate budget</Label>
-                    <Select>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select your budget range" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="25-50k">
-                          ₹25,000 - ₹50,000
-                        </SelectItem>
-                        <SelectItem value="50-100k">
-                          ₹50,000 - ₹1,00,000
-                        </SelectItem>
-                        <SelectItem value="1-2lakh">
-                          ₹1,00,000 - ₹2,00,000
-                        </SelectItem>
-                        <SelectItem value="2lakh+">₹2,00,000+</SelectItem>
-                        <SelectItem value="not-sure">Not sure yet</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      className="min-h-[120px] border-blue-200 dark:border-blue-800"
-                      placeholder="Tell us about your project and requirements"
-                    />
-                  </div>
-
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white">
-                    Contact us
-                  </Button>
-                </div>
+                </form>
               </CardContent>
             </Card>
           </div>
