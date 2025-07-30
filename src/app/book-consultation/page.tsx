@@ -41,8 +41,6 @@ import {
   TIMEZONE_OPTIONS,
   COMMUNICATION_METHODS,
   VALIDATION_RULES,
-  FORM_LABELS,
-  FORM_PLACEHOLDERS,
   ERROR_MESSAGES
 } from "@/lib/constants/form";
 
@@ -191,14 +189,14 @@ export default function BookConsultationPage() {
   /**
    * Submits consultation form using common API service
    */
-  const handleSubmit = async () => {
+  const handleSubmit = async () => {    
     // Check if already submitting
     if (isSubmitting) {
       return;
     }
     
     // Validate all required fields before submission
-    const validation = validateConsultationForm(formData);
+    const validation = validateConsultationForm(formData);    
     
     if (!validation.isValid) {
       setErrors(validation.errors);
@@ -208,12 +206,12 @@ export default function BookConsultationPage() {
     setIsSubmitting(true);
     
     try {
-      const response = await submitConsultationForm(formData);
+      const response: any = await submitConsultationForm(formData);
       
-      if (response.success) {
+      if (response.statusCode === 200) {
         setFormSubmitted(true);
       } else {
-        setErrors({ submit: response.message });
+        setErrors({ submit: response.body.error });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -626,11 +624,7 @@ export default function BookConsultationPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                               <div className="space-y-2">
                                 <Label htmlFor="date">Preferred date *</Label>
-                                {formData.preferredDate && (
-                                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                                    Selected: {new Date(formData.preferredDate).toLocaleDateString()}
-                                  </p>
-                                )}
+                               
                                 <Input 
                                   id="date" 
                                   type="date" 
@@ -643,6 +637,11 @@ export default function BookConsultationPage() {
                                   <p className="text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
                                     <AlertCircle className="h-4 w-4" />
                                     {errors.preferredDate}
+                                  </p>
+                                )}
+                                 {formData.preferredDate && (
+                                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                                    Selected: {new Date(formData.preferredDate).toLocaleDateString()}
                                   </p>
                                 )}
                               </div>
@@ -739,7 +738,7 @@ export default function BookConsultationPage() {
                         )}
                         <Button
                           onClick={() => {
-                            if (step === 3) {
+                            if (step === 3) {                              
                               handleSubmit();
                             } else {
                               handleNextStep();

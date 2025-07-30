@@ -5,11 +5,10 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 import { ApiResponse } from '@/interfaces/form';
 
-const API_BASE_URL = 'https://5ahinmt4vf.execute-api.eu-north-1.amazonaws.com/prod';
+const API_BASE_URL = 'https://5ahinmt4vf.execute-api.eu-north-1.amazonaws.com';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -96,7 +95,7 @@ export const apiRequest = async <T = any>(
   endpoint: string,
   data?: any,
   config?: AxiosRequestConfig
-): Promise<ApiResponse<T> | never> => {
+): Promise<any> => {
   try {
     const response: AxiosResponse<ApiResponse<T>> = await apiClient.request({
       method,

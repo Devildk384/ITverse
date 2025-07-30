@@ -38,10 +38,6 @@ import {
 import {
   INTEREST_OPTIONS,
   CONTACT_BUDGET_RANGES,
-  VALIDATION_RULES,
-  FORM_LABELS,
-  FORM_PLACEHOLDERS,
-  ERROR_MESSAGES
 } from "@/lib/constants/form";
 
 /**
@@ -61,7 +57,6 @@ export default function ContactPage() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   /**
    * Updates form data and clears related errors
@@ -95,7 +90,6 @@ export default function ContactPage() {
       const response = await submitContactForm(formData);
       
       if (response.success) {
-        setIsSubmitted(true);
         setFormData({
           firstName: "",
           lastName: "",

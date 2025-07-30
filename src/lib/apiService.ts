@@ -14,7 +14,7 @@ import { validateContactForm, validateConsultationForm } from './helpers/validat
 export const submitContactForm = async (data: ContactFormData) => {
   try {
     // Validate form data before submission
-    const validation = validateContactForm(data);
+    const validation:any = validateContactForm(data);
     
     if (!validation.isValid) {
       return {
@@ -25,7 +25,7 @@ export const submitContactForm = async (data: ContactFormData) => {
     }
 
     // Submit to API with safe error handling
-    const response = await safeApiRequestPost('/contact', data);
+    const response :any= await safeApiRequestPost('/contact', data);
     
     return response;
   } catch (error: any) {
@@ -45,7 +45,7 @@ export const submitContactForm = async (data: ContactFormData) => {
 export const submitConsultationForm = async (data: ConsultationFormData) => {
   try {
     // Validate form data before submission
-    const validation = validateConsultationForm(data);
+    const validation :any = validateConsultationForm(data);
     
     if (!validation.isValid) {
       return {
@@ -56,7 +56,7 @@ export const submitConsultationForm = async (data: ConsultationFormData) => {
     }
 
     // Submit to API with safe error handling
-    const response = await safeApiRequestPost('/consultation', data);
+    const response :any = await safeApiRequestPost('/prod', data);
     
     return response;
   } catch (error: any) {

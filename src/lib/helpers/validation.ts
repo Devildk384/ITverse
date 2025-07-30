@@ -103,9 +103,9 @@ export const validateConsultationForm = (data: any): { isValid: boolean; errors:
     errors.phone = 'Please enter a valid phone number';
   }
 
-  if (!data.company || !data.company.trim() || data.company.trim().length < 2) {
-    errors.company = 'Company name must be at least 2 characters';
-  }
+  // if (!data.company || !data.company.trim() || data.company.trim().length < 2) {
+  //   errors.company = 'Company name must be at least 2 characters';
+  // }
 
   if (!data.projectType || !data.projectType.trim()) {
     errors.projectType = 'Please select a project type';
