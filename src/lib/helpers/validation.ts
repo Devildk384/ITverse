@@ -74,6 +74,8 @@ export const validateContactForm = (data: any): { isValid: boolean; errors: Reco
   };
 };
 
+
+
 /**
  * Validates consultation form data
  * @param data - ConsultationFormData object

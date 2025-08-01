@@ -3,7 +3,7 @@
  */
 
 import { ContactFormData, ConsultationFormData } from '@/interfaces/form';
-import { safeApiRequestPost } from './apiClient';
+import { safeApiRequestPost, safeApiRequestPostMessage } from './apiClient';
 import { validateContactForm, validateConsultationForm } from './helpers/validation';
 
 /**
@@ -25,7 +25,7 @@ export const submitContactForm = async (data: ContactFormData) => {
     }
 
     // Submit to API with safe error handling
-    const response :any= await safeApiRequestPost('/contact', data);
+    const response :any= await safeApiRequestPostMessage('/prod', data);
     
     return response;
   } catch (error: any) {

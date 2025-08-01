@@ -6,9 +6,18 @@ import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 import { ApiResponse } from '@/interfaces/form';
 
 const API_BASE_URL = 'https://5ahinmt4vf.execute-api.eu-north-1.amazonaws.com';
+const API_BASE_URL_MESSAGE = 'https://74dvtvitz2.execute-api.eu-north-1.amazonaws.com';
+
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+const apiClientMessage = axios.create({
+  baseURL: API_BASE_URL_MESSAGE,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -94,10 +103,19 @@ export const apiRequest = async <T = any>(
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH',
   endpoint: string,
   data?: any,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
+  isMessage?: boolean
 ): Promise<any> => {
   try {
-    const response: AxiosResponse<ApiResponse<T>> = await apiClient.request({
+    const response: AxiosResponse<ApiResponse<T>> = isMessage ? 
+    await apiClientMessage.request({
+      method,
+      url: endpoint,
+      data,
+      ...config,
+    })
+  
+    :  await apiClient.request({
       method,
       url: endpoint,
       data,
@@ -126,10 +144,11 @@ export const safeApiRequest = async <T = any>(
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH',
   endpoint: string,
   data?: any,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
+  isMessage?: boolean
 ): Promise<ApiResponse<T>> => {
   try {
-    return await apiRequest<T>(method, endpoint, data, config);
+    return await apiRequest<T>(method, endpoint, data, config, isMessage);
   } catch (error: any) {
     console.error(`Safe API Request Error (${method} ${endpoint}):`, error);
     
@@ -217,7 +236,7 @@ export const apiRequestDelete = <T = any>(endpoint: string, config?: AxiosReques
  * @returns Promise with ApiResponse
  */
 export const safeApiRequestGet = <T = any>(endpoint: string, config?: AxiosRequestConfig): Promise<ApiResponse<T>> => {
-  return safeApiRequest<T>('GET', endpoint, undefined, config);
+  return safeApiRequest<T>('GET', endpoint, undefined, config, false);
 };
 
 /**
@@ -230,6 +249,38 @@ export const safeApiRequestGet = <T = any>(endpoint: string, config?: AxiosReque
 export const safeApiRequestPost = async <T = any>(endpoint: string, data?: any, config?: AxiosRequestConfig): Promise<ApiResponse<T>> => {
   try {
     const response = await apiRequest<T>('POST', endpoint, data, config);
+    return response;
+  } catch (error: any) {
+    let errorMessage = 'An unexpected error occurred';
+    
+    if (error instanceof ApiError) {
+      errorMessage = error.message;
+    } else if (error instanceof NetworkError) {
+      errorMessage = 'Network error: Unable to connect to the server';
+    } else if (error instanceof TimeoutError) {
+      errorMessage = 'Request timeout: Please try again';
+    } else if (error.message) {
+      errorMessage = error.message;
+    }
+    
+    return {
+      success: false,
+      message: errorMessage,
+    };
+  }
+};
+
+
+/**
+ * Safe convenience wrapper for POST requests (never throws)
+ * @param endpoint - API endpoint path
+ * @param data - Request data
+ * @param config - Additional axios configuration
+ * @returns Promise with ApiResponse
+ */
+export const safeApiRequestPostMessage = async <T = any>(endpoint: string, data?: any, config?: AxiosRequestConfig): Promise<ApiResponse<T>> => {
+  try {
+    const response = await apiRequest<T>('POST', endpoint, data, config, true);
     return response;
   } catch (error: any) {
     let errorMessage = 'An unexpected error occurred';
