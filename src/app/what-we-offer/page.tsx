@@ -953,12 +953,12 @@ export default function WhatWeOfferPage() {
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-lg font-bold">
-                  AB
+                  GY
                 </div>
                 <div>
-                  <div className="font-bold">Anna Bergström</div>
+                  <div className="font-bold">Gaurav Yadav</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    CEO, TechSweden AB
+                    Director, Radiant Academy
                   </div>
                 </div>
               </div>
@@ -977,22 +977,19 @@ export default function WhatWeOfferPage() {
                   ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;The SmartSystem package was perfect for our needs. IT
-                System Solutions delivered a custom e-commerce platform that has
-                significantly increased our sales and streamlined our
-                operations.&quot;
+                &quot;I want to sincerely thank Team Syslence for their outstanding work in developing the complete Radiant Academy website. Their dedication and technical expertise have resulted in a visually appealing, user-friendly, and highly functional platform that truly represents our institution's values and mission.&quot;
               </p>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-lg font-bold">
-                  MJ
+                  UG
                 </div>
                 <div>
-                  <div className="font-bold">Maria Johansson</div>
+                  <div className="font-bold">Utkarsh Goyal</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Founder, HealthTech Sweden
+                    Gautam Hotel, Varanasi
                   </div>
                 </div>
               </div>
@@ -1011,10 +1008,7 @@ export default function WhatWeOfferPage() {
                   ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;We started with the MiniSystem for our booking system and
-                were so impressed that we upgraded to the SmartSystem. The
-                team&apos;s expertise and support have been invaluable to our
-                business.&quot;
+                &quot;I would like to express my heartfelt appreciation to Team Syslence for their outstanding work in developing the complete Gautam Hotel website. The team's exceptional technical expertise and creative execution have resulted in a visually captivating, user‑friendly, and fully functional platform that truly reflects the hospitality and elegance of Gautam Hotel.&quot;
               </p>
             </div>
 
