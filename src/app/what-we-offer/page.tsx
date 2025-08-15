@@ -977,7 +977,7 @@ export default function WhatWeOfferPage() {
                   ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;I want to sincerely thank Team Syslence for their outstanding work in developing the complete Radiant Academy website. Their dedication and technical expertise have resulted in a visually appealing, user-friendly, and highly functional platform that truly represents our institution's values and mission.&quot;
+                &quot;I want to sincerely thank Team Syslence for their outstanding work in developing the complete Radiant Academy website. Their dedication and technical expertise have resulted in a visually appealing, user-friendly, and highly functional platform that truly represents our institution&apos;s values and mission.&quot;
               </p>
             </div>
 
@@ -1008,7 +1008,7 @@ export default function WhatWeOfferPage() {
                   ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;I would like to express my heartfelt appreciation to Team Syslence for their outstanding work in developing the complete Gautam Hotel website. The team's exceptional technical expertise and creative execution have resulted in a visually captivating, user‑friendly, and fully functional platform that truly reflects the hospitality and elegance of Gautam Hotel.&quot;
+                &quot;I would like to express my heartfelt appreciation to Team Syslence for their outstanding work in developing the complete Gautam Hotel website. The team&apos;s exceptional technical expertise and creative execution have resulted in a visually captivating, user‑friendly, and fully functional platform that truly reflects the hospitality and elegance of Gautam Hotel.&quot;
               </p>
             </div>
 
