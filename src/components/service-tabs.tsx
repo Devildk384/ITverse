@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Code, Database, LineChart, MessageSquare, Monitor, ShieldCheck } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -51,9 +52,11 @@ export function ServiceTabs() {
             </li>
           </ul>
           <div className="pt-4">
-            <img
+            <Image
               src="/placeholder.svg?height=300&width=500"
               alt="Web Application Example"
+              width={500}
+              height={300}
               className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
@@ -92,9 +95,11 @@ export function ServiceTabs() {
             </li>
           </ul>
           <div className="pt-4">
-            <img
+            <Image
               src="/placeholder.svg?height=300&width=500"
               alt="Database Solution Example"
+              width={500}
+              height={300}
               className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
@@ -133,9 +138,11 @@ export function ServiceTabs() {
             </li>
           </ul>
           <div className="pt-4">
-            <img
+            <Image
               src="/placeholder.svg?height=300&width=500"
               alt="API Integration Example"
+              width={500}
+              height={300}
               className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
@@ -174,9 +181,11 @@ export function ServiceTabs() {
             </li>
           </ul>
           <div className="pt-4">
-            <img
+            <Image
               src="/placeholder.svg?height=300&width=500"
               alt="Analytics Dashboard Example"
+              width={500}
+              height={300}
               className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
@@ -215,9 +224,11 @@ export function ServiceTabs() {
             </li>
           </ul>
           <div className="pt-4">
-            <img
+            <Image
               src="/placeholder.svg?height=300&width=500"
               alt="Customer Portal Example"
+              width={500}
+              height={300}
               className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
@@ -256,9 +267,11 @@ export function ServiceTabs() {
             </li>
           </ul>
           <div className="pt-4">
-            <img
+            <Image
               src="/placeholder.svg?height=300&width=500"
               alt="Security Solution Example"
+              width={500}
+              height={300}
               className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
