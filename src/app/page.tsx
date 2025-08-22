@@ -8,7 +8,6 @@ import {
   MessageSquare,
   Monitor,
   ShieldCheck,
-  Star,
   Zap,
 } from "lucide-react";
 
@@ -663,38 +662,70 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Testimonial 1 */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-blue-100 dark:border-blue-800 p-6 shadow-lg">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-lg font-bold">
-                  MR
+                  GY
                 </div>
                 <div>
-                  <div className="font-bold">Muhamed Rastif</div>
+                  <div className="font-bold">Gaurav Yadav</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    CTO in a Building Company
+                    Director, Radiant Academy
                   </div>
                 </div>
               </div>
               <div className="flex mb-4">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star
-                    key={i}
-                    className="h-5 w-5 text-yellow-500 fill-yellow-500"
-                  />
-                ))}
+                {Array(5)
+                  .fill(0)
+                  .map((_, i) => (
+                    <svg
+                      key={i}
+                      className="h-5 w-5 text-yellow-500 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;Syslence delivered exactly what we needed.
-                Their team understood our business requirements perfectly and
-                created a custom solution that has significantly improved our
-                operations.&quot;
+                &quot;I want to sincerely thank Team Syslence for their outstanding work in developing the complete Radiant Academy website. Their dedication and technical expertise have resulted in a visually appealing, user-friendly, and highly functional platform that truly represents our institution&apos;s values and mission.&quot;
               </p>
             </div>
 
-            {/* Testimonial 2 */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-blue-100 dark:border-blue-800 p-6 shadow-lg">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-lg font-bold">
+                  UG
+                </div>
+                <div>
+                  <div className="font-bold">Utkarsh Goyal</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    Gautam Hotel, Varanasi
+                  </div>
+                </div>
+              </div>
+              <div className="flex mb-4">
+                {Array(5)
+                  .fill(0)
+                  .map((_, i) => (
+                    <svg
+                      key={i}
+                      className="h-5 w-5 text-yellow-500 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  ))}
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 italic">
+                &quot;I would like to express my heartfelt appreciation to Team Syslence for their outstanding work in developing the complete Gautam Hotel website. The team&apos;s exceptional technical expertise and creative execution have resulted in a visually captivating, user‑friendly, and fully functional platform that truly reflects the hospitality and elegance of Gautam Hotel.&quot;
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-lg font-bold">
                   EL
@@ -707,46 +738,23 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex mb-4">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star
-                    key={i}
-                    className="h-5 w-5 text-yellow-500 fill-yellow-500"
-                  />
-                ))}
+                {Array(5)
+                  .fill(0)
+                  .map((_, i) => (
+                    <svg
+                      key={i}
+                      className="h-5 w-5 text-yellow-500 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;Working with Syslence was a pleasure from start
-                to finish. Their communication was excellent, and they delivered
-                our project on time and within budget. Highly recommended!&quot;
-              </p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl border border-blue-100 dark:border-blue-800 p-6 shadow-lg">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-lg font-bold">
-                  MJ
-                </div>
-                <div>
-                  <div className="font-bold">Maria Johansson</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Founder, HealthTech Sweden
-                  </div>
-                </div>
-              </div>
-              <div className="flex mb-4">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star
-                    key={i}
-                    className="h-5 w-5 text-yellow-500 fill-yellow-500"
-                  />
-                ))}
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;The booking system Syslence created for our
-                healthcare practice has transformed how we manage appointments.
-                Our staff and patients love it, and it&apos;s saved us countless
-                hours.&quot;
+                &quot;The PowerSystem package gave us exactly what we needed - a
+                fully customized inventory management system that integrates
+                with all our existing tools. Worth every krona!&quot;
               </p>
             </div>
           </div>

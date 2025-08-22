@@ -81,10 +81,10 @@ export default function PortfolioPage() {
                 <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-blue-600/20 to-teal-500/20 rounded-bl-3xl"></div>
                 <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-blue-600/20 to-teal-500/20 rounded-tr-3xl"></div>
                 <Image
-                  width={300}
-                  height={300}
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="HealthConnect Patient Portal"
+                  width={800}
+                  height={600}
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&crop=center"
+                  alt="Gautam Hotel Management System"
                   className="w-full h-auto"
                 />
               </div>
@@ -92,17 +92,14 @@ export default function PortfolioPage() {
             <div className="space-y-6 order-1 lg:order-2">
               <div className="space-y-2">
                 <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50">
-                  Healthcare
+                  Hospitality
                 </Badge>
                 <h3 className="text-3xl font-bold">
-                  HealthConnect Patient Portal
+                  Gautam Hotel Management System
                 </h3>
               </div>
               <p className="text-gray-500 dark:text-gray-400">
-                A comprehensive patient management system for a leading Swedish
-                healthcare provider. This custom solution streamlined
-                appointment scheduling, patient communication, and medical
-                record management.
+                A comprehensive hotel management system for Gautam Hotel in Varanasi, featuring room booking, guest management, billing, and housekeeping coordination. This custom solution streamlined operations and enhanced guest experience.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -113,8 +110,8 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">40% reduction</span> in
-                      administrative workload
+                      <span className="font-medium">45% reduction</span> in
+                      booking processing time
                     </p>
                   </div>
                 </div>
@@ -126,8 +123,8 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">30% increase</span> in
-                      patient satisfaction
+                      <span className="font-medium">35% increase</span> in
+                      guest satisfaction ratings
                     </p>
                   </div>
                 </div>
@@ -139,8 +136,8 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">25% reduction</span> in
-                      missed appointments
+                      <span className="font-medium">28% improvement</span> in
+                      room occupancy rates
                     </p>
                   </div>
                 </div>
@@ -176,14 +173,12 @@ export default function PortfolioPage() {
             <div className="space-y-6">
               <div className="space-y-2">
                 <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50">
-                  E-commerce
+                  Healthcare
                 </Badge>
-                <h3 className="text-3xl font-bold">IndianCraft Marketplace</h3>
+                <h3 className="text-3xl font-bold">VisionCare Lens Consultation</h3>
               </div>
               <p className="text-gray-500 dark:text-gray-400">
-                A custom e-commerce platform for artisanal Indian crafts,
-                featuring secure payments, inventory management, and a
-                sophisticated recommendation engine to boost sales.
+                A comprehensive eye care consultation system for VisionCare clinics across Western UP, featuring appointment booking, patient records, prescription management, and telemedicine consultations. This solution modernized eye care services.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -194,8 +189,8 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">85% increase</span> in
-                      online sales
+                      <span className="font-medium">70% faster</span> appointment
+                      scheduling process
                     </p>
                   </div>
                 </div>
@@ -207,8 +202,8 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">50% higher</span> average
-                      order value
+                      <span className="font-medium">50% reduction</span> in
+                      patient wait times
                     </p>
                   </div>
                 </div>
@@ -220,24 +215,24 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">3x growth</span> in customer
-                      base
+                      <span className="font-medium">90% accuracy</span> in
+                      prescription management
                     </p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
                 <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
-                  Next.js
+                  React
                 </div>
                 <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
-                  MongoDB
+                  Node.js
                 </div>
                 <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
-                  Stripe
+                  PostgreSQL
                 </div>
                 <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
-                  Vercel
+                  AWS
                 </div>
               </div>
               {/* <Button
@@ -256,10 +251,10 @@ export default function PortfolioPage() {
                 <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-purple-600/20 to-pink-500/20 rounded-bl-3xl"></div>
                 <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-purple-600/20 to-pink-500/20 rounded-tr-3xl"></div>
                 <Image
-                  width={300}
-                  height={300}
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="IndianCraft Marketplace"
+                  width={800}
+                  height={600}
+                  src="https://plus.unsplash.com/premium_photo-1661302956617-b40b5d2bf19d?w=800&h=600&fit=crop&crop=center"
+                  alt="VisionCare Lens Consultation"
                   className="w-full h-auto"
                 />
               </div>
@@ -274,10 +269,10 @@ export default function PortfolioPage() {
                 <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-amber-600/20 to-orange-500/20 rounded-bl-3xl"></div>
                 <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-amber-600/20 to-orange-500/20 rounded-tr-3xl"></div>
                 <Image
-                  width={300}
-                  height={300}
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="LogiTrack Fleet Management"
+                  width={800}
+                  height={600}
+                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop&crop=center"
+                  alt="Radiant Academy School Management"
                   className="w-full h-auto"
                 />
               </div>
@@ -285,16 +280,14 @@ export default function PortfolioPage() {
             <div className="space-y-6 order-1 lg:order-2">
               <div className="space-y-2">
                 <Badge className="bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-amber-900/50">
-                  Logistics
+                  Education
                 </Badge>
                 <h3 className="text-3xl font-bold">
-                  LogiTrack Fleet Management
+                  Radiant Academy School Management
                 </h3>
               </div>
               <p className="text-gray-500 dark:text-gray-400">
-                A comprehensive fleet management system for a logistics company,
-                featuring real-time tracking, maintenance scheduling, and fuel
-                consumption analytics to optimize operations.
+                A comprehensive school management system for Radiant Academy in Delhi, featuring student management, attendance tracking, fee collection, and parent communication portal. This solution digitized all school operations and improved administrative efficiency.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -305,8 +298,8 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">22% reduction</span> in fuel
-                      costs
+                      <span className="font-medium">60% reduction</span> in
+                      administrative paperwork
                     </p>
                   </div>
                 </div>
@@ -318,8 +311,8 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">35% decrease</span> in
-                      maintenance expenses
+                      <span className="font-medium">40% improvement</span> in
+                      parent engagement
                     </p>
                   </div>
                 </div>
@@ -331,24 +324,24 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">18% improvement</span> in
-                      delivery times
+                      <span className="font-medium">95% accuracy</span> in
+                      attendance tracking
                     </p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
                 <div className="rounded-full bg-amber-100 dark:bg-amber-900/30 px-3 py-1 text-sm text-amber-700 dark:text-amber-300">
-                  Vue.js
+                  Next.js
                 </div>
                 <div className="rounded-full bg-amber-100 dark:bg-amber-900/30 px-3 py-1 text-sm text-amber-700 dark:text-amber-300">
-                  Express
+                  MongoDB
                 </div>
                 <div className="rounded-full bg-amber-100 dark:bg-amber-900/30 px-3 py-1 text-sm text-amber-700 dark:text-amber-300">
-                  MySQL
+                  Razorpay
                 </div>
                 <div className="rounded-full bg-amber-100 dark:bg-amber-900/30 px-3 py-1 text-sm text-amber-700 dark:text-amber-300">
-                  Google Maps API
+                  Vercel
                 </div>
               </div>
               {/* <Button
@@ -383,6 +376,15 @@ export default function PortfolioPage() {
             {/* Project Card 1 */}
             <Card className="group relative overflow-hidden border-blue-100 dark:border-blue-800 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-blue-600/10 to-transparent rounded-bl-3xl"></div>
+              <div className="relative overflow-hidden rounded-t-xl">
+                <Image
+                  width={400}
+                  height={200}
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center"
+                  alt="InvestSmart Dashboard"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50">
@@ -424,6 +426,15 @@ export default function PortfolioPage() {
             {/* Project Card 2 */}
             <Card className="group relative overflow-hidden border-teal-100 dark:border-teal-800 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-teal-600/10 to-transparent rounded-bl-3xl"></div>
+              <div className="relative overflow-hidden rounded-t-xl">
+                <Image
+                  width={400}
+                  height={200}
+                  src="https://images.unsplash.com/photo-1523240794102-9e05d8342e9a?w=400&h=200&fit=crop&crop=center"
+                  alt="EduLearn Platform"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Badge className="bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-900/50">
@@ -463,6 +474,15 @@ export default function PortfolioPage() {
             {/* Project Card 3 */}
             <Card className="group relative overflow-hidden border-purple-100 dark:border-purple-800 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-purple-600/10 to-transparent rounded-bl-3xl"></div>
+              <div className="relative overflow-hidden rounded-t-xl">
+                <Image
+                  width={400}
+                  height={200}
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=200&fit=crop&crop=center"
+                  alt="PropertyPro CRM"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50">
@@ -501,6 +521,15 @@ export default function PortfolioPage() {
 
             <Card className="group relative overflow-hidden border-amber-100 dark:border-amber-800 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-amber-600/10 to-transparent rounded-bl-3xl"></div>
+              <div className="relative overflow-hidden rounded-t-xl">
+                <Image
+                  width={400}
+                  height={200}
+                  src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=200&fit=crop&crop=center"
+                  alt="HotelHub Booking"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Badge className="bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-amber-900/50">
@@ -540,6 +569,15 @@ export default function PortfolioPage() {
             {/* Project Card 5 */}
             <Card className="group relative overflow-hidden border-red-100 dark:border-red-800 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-red-600/10 to-transparent rounded-bl-3xl"></div>
+              <div className="relative overflow-hidden rounded-t-xl">
+                <Image
+                  width={400}
+                  height={200}
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=200&fit=crop&crop=center"
+                  alt="ProductionPro ERP"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Badge className="bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-900/50">
@@ -579,6 +617,15 @@ export default function PortfolioPage() {
             {/* Project Card 6 */}
             <Card className="group relative overflow-hidden border-green-100 dark:border-green-800 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-green-600/10 to-transparent rounded-bl-3xl"></div>
+              <div className="relative overflow-hidden rounded-t-xl">
+                <Image
+                  width={400}
+                  height={200}
+                  src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=200&fit=crop&crop=center"
+                  alt="SecureAccess Portal"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardContent className="p-6">
                 <div className="mb-4">
                   <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50">
