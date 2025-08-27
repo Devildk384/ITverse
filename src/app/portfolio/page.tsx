@@ -430,7 +430,7 @@ export default function PortfolioPage() {
                 <Image
                   width={400}
                   height={200}
-                  src="https://images.unsplash.com/photo-1523240794102-9e05d8342e9a?w=400&h=200&fit=crop&crop=center"
+                  src="https://images.unsplash.com/photo-1743834147172-37c12011b321?w=400&h=200&fit=crop&crop=center"
                   alt="EduLearn Platform"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

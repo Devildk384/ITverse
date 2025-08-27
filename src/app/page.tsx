@@ -108,9 +108,9 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-sm font-medium">Trusted Quality</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                    {/* <div className="text-xs text-gray-500 dark:text-gray-400">
                       ISO 9001 & ISO 27001 Certified
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
