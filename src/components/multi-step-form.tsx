@@ -86,20 +86,18 @@ export function MultiStepForm() {
           {steps.map((step, index) => (
             <div
               key={step.id}
-              className={`flex flex-col items-center ${
-                index === 0
+              className={`flex flex-col items-center ${index === 0
                   ? "items-start"
                   : index === steps.length - 1
-                  ? "items-end"
-                  : ""
-              }`}
+                    ? "items-end"
+                    : ""
+                }`}
             >
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                  index <= currentStep
+                className={`w-8 h-8 rounded-full flex items-center justify-center ${index <= currentStep
                     ? "bg-blue-600 text-white"
                     : "bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
-                }`}
+                  }`}
               >
                 {index < currentStep ? (
                   <Check className="h-4 w-4" />
@@ -318,10 +316,10 @@ export function MultiStepForm() {
                 <option value="" disabled>
                   Select budget range
                 </option>
-                <option value="25-50k">₹25,000 - ₹50,000</option>
-                <option value="50-100k">₹50,000 - ₹1,00,000</option>
-                <option value="1-2lakh">₹1,00,000 - ₹2,00,000</option>
-                <option value="2lakh+">₹2,00,000+</option>
+                <option value="300-600">$350 – $700</option>
+                <option value="700-1200">$700 – $1,200</option>
+                <option value="1200-2500">$1,200 – $2,500</option>
+                <option value="2500+">$2,500+</option>
               </select>
             </div>
             <div className="space-y-2">

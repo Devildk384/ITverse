@@ -802,11 +802,7 @@ export default function Home() {
                       How much does a custom web application cost?
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      The cost depends on the complexity and scope of your
-                      project. Our packages start at ₹1,00,000 for simple
-                      applications. We provide detailed quotes after
-                      understanding your specific requirements during our free
-                      consultation.
+                      The cost of development depends on the complexity and scope of your project. Our packages start from $2,500 for simple applications. We provide a detailed quote after understanding your specific requirements during a free consultation.
                     </p>
                   </div>
                 </div>

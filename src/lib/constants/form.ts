@@ -97,10 +97,10 @@ export const INTEREST_OPTIONS = [
  * Contact form budget ranges
  */
 export const CONTACT_BUDGET_RANGES = [
-  { value: "₹25,000 - ₹50,000", label: "₹25,000 - ₹50,000" },
-  { value: "₹50,000 - ₹1,00,000", label: "₹50,000 - ₹1,00,000" },
-  { value: "₹1,00,000 - ₹2,00,000", label: "₹1,00,000 - ₹2,00,000" },
-  { value: "₹2,00,000+", label: "₹2,00,000+" },
+  { value: "$350 – $700", label: "$350 – $700" },
+  { value: "$700 – $1,200", label: "$700 – $1,200" },
+  { value: "$1,200 – $2,500", label: "$1,200 – $2,500" },
+  { value: "$2,500+", label: "$2,500+" },
   { value: "Not sure yet", label: "Not sure yet" }
 ];
 
