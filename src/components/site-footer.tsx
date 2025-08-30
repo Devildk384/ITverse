@@ -14,7 +14,7 @@ export function SiteFooter() {
               <span className="font-bold text-xl">Syslence</span>
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Custom web application systems for small and medium-sized businesses in India.
+              Custom Web Application Solutions for Small and Medium Businesses Worldwide.
             </p>
           </div>
 
