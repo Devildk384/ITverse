@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import SchoolSwitch from "@/public/schoolswitch.png";
+
 
 export default function PortfolioPage() {
   return (
@@ -31,9 +33,8 @@ export default function PortfolioPage() {
                   left: `${Math.random() * 100}%`,
                   opacity: Math.random() * 0.3,
                   transform: `scale(${Math.random() * 0.8 + 0.2})`,
-                  animation: `float ${
-                    Math.random() * 10 + 15
-                  }s ease-in-out infinite`,
+                  animation: `float ${Math.random() * 10 + 15
+                    }s ease-in-out infinite`,
                   animationDelay: `${Math.random() * 5}s`,
                 }}
               />
@@ -55,6 +56,133 @@ export default function PortfolioPage() {
               web solutions.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="w-full py-16 md:py-24">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="inline-block rounded-full bg-green-100 dark:bg-green-900/30 px-3 py-1 text-sm text-green-700 dark:text-green-300">
+              Live Projects
+            </div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Projects We&apos;re Working On
+            </h2>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              Explore the real projects we&apos;re currently building and see how we&apos;re
+              helping businesses transform their ideas into reality. These projects are
+              either live or actively in development.
+            </p>
+          </div>
+
+
+          {/* Project 1 */}
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center mb-20">
+            <div className="relative order-2 lg:order-1">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-600 to-teal-500 opacity-30 blur-xl"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-blue-100 dark:border-blue-800 bg-white dark:bg-gray-800 shadow-xl">
+                <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-blue-600/20 to-teal-500/20 rounded-bl-3xl"></div>
+                <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-blue-600/20 to-teal-500/20 rounded-tr-3xl"></div>
+                <Image
+                  width={800}
+                  height={600}
+                  src={SchoolSwitch}
+                  alt="SchoolSwitch Platform"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+            <div className="space-y-6 order-1 lg:order-2">
+              <div className="space-y-2">
+                <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50">
+                  EdTech
+                </Badge>
+                <h3 className="text-3xl font-bold">
+                  SchoolSwitch – Smart School Management Platform
+                </h3>
+              </div>
+              <p className="text-gray-500 dark:text-gray-400">
+                SchoolSwitch is a comprehensive school management platform that helps
+                institutions digitize operations including attendance, fees, timetable,
+                exams, and parent-teacher communication. It streamlines administration,
+                improves collaboration, and empowers educators with actionable insights.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400"></div>
+                    </div>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="font-medium">60% faster</span> fee collection and
+                      payment tracking
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400"></div>
+                    </div>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="font-medium">40% increase</span> in parent
+                      engagement via real-time updates
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400"></div>
+                    </div>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="font-medium">30% reduction</span> in manual
+                      administrative workload
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <div className="rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-700 dark:text-blue-300">
+                  Next.js
+                </div>
+                <div className="rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-700 dark:text-blue-300">
+                  Node.js
+                </div>
+                <div className="rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-700 dark:text-blue-300">
+                  MongoDb
+                </div>
+                <div className="rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-700 dark:text-blue-300">
+                  AWS
+                </div>
+              </div>
+
+              {/* Live Project Button */}
+              <Button
+                asChild
+                className="bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600"
+              >
+                <Link href="https://schoolswitch.in" target="_blank">
+                  View Live Project
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+
+
+          {/* Project 2 */}
+
+
+          {/* Project 3 */}
+
         </div>
       </section>
 
