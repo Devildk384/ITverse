@@ -14,6 +14,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import SchoolSwitch from "@/public/schoolswitch.png";
+import FireDivine from "@/public/firedivine.png";
+
+
 
 
 export default function PortfolioPage() {
@@ -98,14 +101,11 @@ export default function PortfolioPage() {
                   EdTech
                 </Badge>
                 <h3 className="text-3xl font-bold">
-                  SchoolSwitch – Smart School Management Platform
+                 SchoolSwitch – Smart School Management Platform (In Development)
                 </h3>
               </div>
               <p className="text-gray-500 dark:text-gray-400">
-                SchoolSwitch is a comprehensive school management platform that helps
-                institutions digitize operations including attendance, fees, timetable,
-                exams, and parent-teacher communication. It streamlines administration,
-                improves collaboration, and empowers educators with actionable insights.
+              SchoolSwitch is a comprehensive EdTech platform currently being developed by Syslence Technologies. The platform is designed to help schools digitize operations including attendance, fee management, timetables, exams, and parent–teacher communication.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -116,8 +116,7 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">60% faster</span> fee collection and
-                      payment tracking
+                      End-to-end student and staff management
                     </p>
                   </div>
                 </div>
@@ -129,8 +128,7 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">40% increase</span> in parent
-                      engagement via real-time updates
+                      Automated fee collection with real-time tracking
                     </p>
                   </div>
                 </div>
@@ -142,8 +140,19 @@ export default function PortfolioPage() {
                   </div>
                   <div className="ml-3">
                     <p className="text-gray-700 dark:text-gray-300">
-                      <span className="font-medium">30% reduction</span> in manual
-                      administrative workload
+                      Parent engagement through instant updates and communication tools
+                    </p>
+                  </div>
+                </div>
+                 <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400"></div>
+                    </div>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      Analytics and dashboards for administrators
                     </p>
                   </div>
                 </div>
@@ -179,6 +188,109 @@ export default function PortfolioPage() {
 
 
           {/* Project 2 */}
+
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center mb-20">
+            {/* Left Side: Image */}
+            <div className="relative order-2 lg:order-1">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 opacity-30 blur-xl"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-purple-100 dark:border-purple-800 bg-white dark:bg-gray-800 shadow-xl">
+                <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-purple-600/20 to-pink-500/20 rounded-bl-3xl"></div>
+                <div className="absolute bottom-0 left-0 h-20 w-20 bg-gradient-to-tr from-purple-600/20 to-pink-500/20 rounded-tr-3xl"></div>
+                <Image
+                  width={800}
+                  height={600}
+                  src={FireDivine} // 🔥 replace with your Fire Divine logo or banner
+                  alt="Fire Divine Games"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Right Side: Content */}
+            <div className="space-y-6 order-1 lg:order-2">
+              <div className="space-y-2">
+                <Badge className="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50">
+                  Gaming
+                </Badge>
+                <h3 className="text-3xl font-bold">
+                  Fire Divine Games – Indie Game Studio
+                </h3>
+              </div>
+
+              <p className="text-gray-500 dark:text-gray-400">
+                Fire Divine Games is an <span className="font-medium">MSME-registered indie game studio</span> focused on building hidden object and puzzle games with powerful storytelling. For this project, Syslence Technologies designed and developed their official website, set up a serverless backend using AWS Lambda, and integrated a MongoDB database to support future scalability.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400"></div>
+                    </div>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="font-medium">Custom website</span> designed and developed for Fire Divine Games
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400"></div>
+                    </div>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="font-medium">Serverless backend</span> powered by AWS Lambda and API Gateway
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                      <div className="h-2 w-2 rounded-full bg-green-600 dark:bg-green-400"></div>
+                    </div>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="font-medium">Database integration</span> with MongoDB for scalable data storage
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tech Stack or Focus */}
+              <div className="flex flex-wrap gap-3">
+                <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
+                  React Js
+                </div>
+                <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
+                  AWS
+                </div>
+                <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
+                  Lambda Functiom
+                </div>
+                <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-sm text-purple-700 dark:text-purple-300">
+                  MongoDb
+                </div>
+              </div>
+
+              {/* Live Project Button */}
+              <Button
+                asChild
+                className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600"
+              >
+                <Link href="https://firedivine.com" target="_blank">
+                  View Live Project
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
 
 
           {/* Project 3 */}
