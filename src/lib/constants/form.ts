@@ -32,14 +32,14 @@ export const PROJECT_TYPES = [
 ];
 
 /**
- * Budget ranges for consultation form
+ * Budget ranges for consultation form (in USD)
  */
 export const BUDGET_RANGES = [
-  { value: "₹25,000 - ₹50,000", label: "₹25,000 - ₹50,000" },
-  { value: "₹50,000 - ₹1,00,000", label: "₹50,000 - ₹1,00,000" },
-  { value: "₹1,00,000 - ₹2,00,000", label: "₹1,00,000 - ₹2,00,000" },
-  { value: "₹2,00,000 - ₹5,00,000", label: "₹2,00,000 - ₹5,00,000" },
-  { value: "₹5,00,000+", label: "₹5,00,000+" },
+  { value: "500-1000", label: "$500 - $1,000" },
+  { value: "1000-2500", label: "$1,000 - $2,500" },
+  { value: "2500-5000", label: "$2,500 - $5,000" },
+  { value: "5000-10000", label: "$5,000 - $10,000" },
+  { value: "10000+", label: "$10,000+" },
   { value: "not-sure", label: "Not sure yet" }
 ];
 

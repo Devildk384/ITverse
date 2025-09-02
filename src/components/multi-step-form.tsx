@@ -316,7 +316,7 @@ export function MultiStepForm() {
                 <option value="" disabled>
                   Select budget range
                 </option>
-                <option value="300-600">$350 – $700</option>
+                <option value="350-700">$350 – $700</option>
                 <option value="700-1200">$700 – $1,200</option>
                 <option value="1200-2500">$1,200 – $2,500</option>
                 <option value="2500+">$2,500+</option>
