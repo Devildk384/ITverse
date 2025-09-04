@@ -54,10 +54,7 @@ export default function PortfolioPage() {
               Portfolio
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Explore our successful projects and see how we&apos;ve helped
-              businesses across India transform their operations with custom
-              web solutions.
-            </p>
+            Explore our successful projects and see how we&apos;ve helped businesses worldwide transform their operations with custom web solutions.            </p>
           </div>
         </div>
       </section>

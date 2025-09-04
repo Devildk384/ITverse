@@ -123,7 +123,7 @@ export default function Home() {
                   <div>
                     <div className="text-sm font-medium">Fast Delivery</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">
-                      2-5 Week Turnaround (India-based delivery)
+                      2–5 Week Turnaround (depending on project scope)
                     </div>
                   </div>
                 </div>
@@ -802,7 +802,7 @@ export default function Home() {
                       How much does a custom web application cost?
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      The cost of development depends on the complexity and scope of your project. Our packages start from $2,500 for simple applications. We provide a detailed quote after understanding your specific requirements during a free consultation.
+                      The cost of development depends on the complexity and scope of your project. Our packages start from $600 for simple applications. We provide a detailed quote after understanding your specific requirements during a free consultation.
                     </p>
                   </div>
                 </div>
@@ -866,10 +866,7 @@ export default function Home() {
                       How do you handle communication during the project?
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      We maintain clear communication throughout the project
-                      with regular updates and progress reports. Our Swedish
-                      team handles all client communication, ensuring smooth
-                      interaction and understanding of your needs.
+                      We maintain transparent communication throughout the project by providing regular updates and progress reports. Our dedicated team ensures smooth interaction and a clear understanding of your requirements, making the entire process seamless and stress-free.
                     </p>
                   </div>
                 </div>

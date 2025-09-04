@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ToggleTheme } from "./theme-toggle";
 import LogoImage from "@/public/logo.webp";
+import LogoImageWhite from "@/public/logo_whit.png";
+
 import Image from "next/image";
 
 export function MainNav() {
@@ -18,6 +20,7 @@ export function MainNav() {
   return (
     <header className="sticky shadow-md top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between mx-auto">
+        {/* Left section */}
         <div className="flex gap-2 items-center">
           <button
             className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -25,18 +28,29 @@ export function MainNav() {
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-         <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src={LogoImage}
-            alt="Syslence Logo"
-            width={200}
-            height={60}
-            className="w-[150px] h-[60px] md:w-[200px] md:ml-0 -ml-[20px] md:h-[60px] object-contain"
-          />
-        </Link>
 
+          {/* Logo with dark mode support */}
+          <Link href="/" className="flex items-center space-x-2">
+            {/* Light logo */}
+            <Image
+              src={LogoImage}
+              alt="Syslence Logo"
+              width={200}
+              height={60}
+              className="dark:hidden w-[150px] h-[60px] md:w-[200px] md:h-[60px] md:ml-0 -ml-[20px] object-contain"
+            />
+            {/* Dark logo */}
+            <Image
+              src={LogoImageWhite}
+              alt="Syslence White Logo"
+              width={200}
+              height={60}
+              className="hidden dark:block w-[150px] h-[60px] md:w-[200px] md:h-[60px] md:ml-0 -ml-[20px] object-contain"
+            />
+          </Link>
         </div>
 
+        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center space-x-6">
           <Link
             href="/"
@@ -84,6 +98,8 @@ export function MainNav() {
             Contact Us
           </Link>
         </nav>
+
+        {/* Right section */}
         <div className="flex gap-2 items-center">
           <Button
             asChild
@@ -94,6 +110,7 @@ export function MainNav() {
           <ToggleTheme />
         </div>
 
+        {/* Mobile nav */}
         {isMenuOpen && (
           <div className="absolute top-16 left-0 right-0 bg-background shadow-lg md:hidden">
             <nav className="container flex flex-col py-4 space-y-3">

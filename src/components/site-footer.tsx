@@ -1,23 +1,40 @@
 import Link from "next/link";
 import { Mail, Phone, Globe, Linkedin, Twitter, Facebook } from "lucide-react";
+import Image from "next/image";
+import LogoImage from "@/public/logo.webp";
+import LogoImageWhite from "@/public/logo_whit.png";
 
 export function SiteFooter() {
   return (
     <footer className="w-full bg-gray-50 dark:bg-gray-900 border-t border-blue-200">
       <div className="container py-12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ml-[15px] mr-[15px]">
+          {/* Logo + Description */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-teal-400 flex items-center justify-center text-white font-bold">
-                IT
-              </div>
-              <span className="font-bold text-xl">Syslence</span>
+              {/* Light Logo */}
+              <Image
+                src={LogoImage}
+                alt="Syslence Logo"
+                width={180}
+                height={50}
+                className="dark:hidden w-[150px] h-auto md:w-[180px] object-contain"
+              />
+              {/* Dark Logo */}
+              <Image
+                src={LogoImageWhite}
+                alt="Syslence White Logo"
+                width={180}
+                height={50}
+                className="hidden dark:block w-[150px] h-auto md:w-[180px] object-contain"
+              />
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-400">
               Custom Web Application Solutions for Small and Medium Businesses Worldwide.
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h3 className="font-medium text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -64,6 +81,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
             <h3 className="font-medium text-lg mb-4">Contact</h3>
             <ul className="space-y-2">
@@ -82,6 +100,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
+          {/* Social + Newsletter */}
           <div>
             <h3 className="font-medium text-lg mb-4">Follow Us</h3>
             <div className="flex space-x-4">
@@ -107,6 +126,8 @@ export function SiteFooter() {
                 <span className="sr-only">Facebook</span>
               </a>
             </div>
+
+            {/* Newsletter */}
             <div className="mt-6">
               <h4 className="text-sm font-medium mb-2">
                 Subscribe to our newsletter
@@ -125,6 +146,7 @@ export function SiteFooter() {
           </div>
         </div>
 
+        {/* Bottom section */}
         <div className="border-t border-blue-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500 dark:text-gray-400 ml-[15px] mr-[15px]">
             © 2025 Syslence. All rights reserved.

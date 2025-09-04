@@ -31,9 +31,9 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContactFormData } from "@/interfaces/form";
-import { 
-  validateContactForm, 
-  submitContactForm 
+import {
+  validateContactForm,
+  submitContactForm
 } from "@/lib/apiService";
 import {
   INTEREST_OPTIONS,
@@ -76,19 +76,19 @@ export default function ContactPage() {
    */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const validation = validateContactForm(formData);
-    
+
     if (!validation.isValid) {
       setErrors(validation.errors);
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
       const response = await submitContactForm(formData);
-      
+
       if (response.success) {
         setFormData({
           firstName: "",
@@ -128,9 +128,8 @@ export default function ContactPage() {
                   left: `${Math.random() * 100}%`,
                   opacity: Math.random() * 0.3,
                   transform: `scale(${Math.random() * 0.8 + 0.2})`,
-                  animation: `float ${
-                    Math.random() * 10 + 15
-                  }s ease-in-out infinite`,
+                  animation: `float ${Math.random() * 10 + 15
+                    }s ease-in-out infinite`,
                   animationDelay: `${Math.random() * 5}s`,
                   willChange: "transform",
                 }}
@@ -439,7 +438,7 @@ export default function ContactPage() {
                       )}
                     </div>
 
-                    <Button 
+                    <Button
                       type="submit"
                       disabled={isSubmitting}
                       className="w-full bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white disabled:opacity-50"
@@ -482,7 +481,7 @@ export default function ContactPage() {
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
                       The cost depends on the complexity and scope of your
-                      project. Our packages start at ₹25,000 for simple
+                      project. Our packages start at $600 for simple
                       applications. We provide detailed quotes after
                       understanding your specific requirements during our free
                       consultation.
@@ -549,10 +548,7 @@ export default function ContactPage() {
                       How do you handle communication during the project?
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      We maintain clear communication throughout the project
-                      with regular updates and progress reports. Our Swedish
-                      team handles all client communication, ensuring smooth
-                      interaction and understanding of your needs.
+                      We maintain transparent communication throughout the project by providing regular updates and progress reports. Our dedicated team ensures smooth interaction and a clear understanding of your requirements, making the entire process seamless and stress-free.
                     </p>
                   </div>
                 </div>
