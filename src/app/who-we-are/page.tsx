@@ -72,7 +72,7 @@ export default function WhoWeArePage() {
               <div className="space-y-4 text-gray-500 dark:text-gray-400">
                 <p>
                   Syslence was founded with a simple mission: to
-                  provide small and medium-sized businesses in India with
+                  provide small and medium-sized businesses for Global & Indian Businesses with
                   high-quality, custom web applications at competitive prices.
                 </p>
                 <p>
