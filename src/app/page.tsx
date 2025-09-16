@@ -669,9 +669,9 @@ export default function Home() {
                   GY
                 </div>
                 <div>
-                  <div className="font-bold">Gaurav Yadav</div>
+                  <div className="font-bold">Gaurav Swarup </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Director, Radiant Academy
+                    Director, Dr. VSEC
                   </div>
                 </div>
               </div>
@@ -690,7 +690,7 @@ export default function Home() {
                   ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;I want to sincerely thank Team Syslence for their outstanding work in developing the complete Radiant Academy website. Their dedication and technical expertise have resulted in a visually appealing, user-friendly, and highly functional platform that truly represents our institution&apos;s values and mission.&quot;
+                &quot;I want to sincerely thank Team Syslence for their outstanding work in developing the complete VSEC website. Their dedication and technical expertise have resulted in a visually appealing, user-friendly, and highly functional platform that truly represents our institution&apos;s values and mission.&quot;
               </p>
             </div>
 
@@ -702,7 +702,7 @@ export default function Home() {
                 <div>
                   <div className="font-bold">Utkarsh Goyal</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Gautam Hotel, Varanasi
+                    THE STAY INN , Varanasi
                   </div>
                 </div>
               </div>
@@ -721,7 +721,7 @@ export default function Home() {
                   ))}
               </div>
               <p className="text-gray-600 dark:text-gray-400 italic">
-                &quot;I would like to express my heartfelt appreciation to Team Syslence for their outstanding work in developing the complete Gautam Hotel website. The team&apos;s exceptional technical expertise and creative execution have resulted in a visually captivating, user‑friendly, and fully functional platform that truly reflects the hospitality and elegance of Gautam Hotel.&quot;
+                &quot;I would like to express my heartfelt appreciation to Team Syslence for their outstanding work in developing the complete The Stay Inn website. The teams exceptional technical expertise and creative execution have resulted in a visually captivating, user‑friendly, and fully functional platform that truly reflects the hospitality and elegance of The Stay Inn.&quot;
               </p>
             </div>
 

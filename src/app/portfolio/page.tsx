@@ -321,7 +321,7 @@ export default function PortfolioPage() {
                   width={800}
                   height={600}
                   src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&crop=center"
-                  alt="Gautam Hotel Management System"
+                  alt="The Stay Inn Management System"
                   className="w-full h-auto"
                 />
               </div>
@@ -332,11 +332,11 @@ export default function PortfolioPage() {
                   Hospitality
                 </Badge>
                 <h3 className="text-3xl font-bold">
-                  Gautam Hotel Management System
+                  The Stay Inn Management System
                 </h3>
               </div>
               <p className="text-gray-500 dark:text-gray-400">
-                A comprehensive hotel management system for Gautam Hotel in Varanasi, featuring room booking, guest management, billing, and housekeeping coordination. This custom solution streamlined operations and enhanced guest experience.
+                A comprehensive hotel management system for The Stay Inn in Varanasi, featuring room booking, guest management, billing, and housekeeping coordination. This custom solution streamlined operations and enhanced guest experience.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -509,7 +509,7 @@ export default function PortfolioPage() {
                   width={800}
                   height={600}
                   src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop&crop=center"
-                  alt="Radiant Academy School Management"
+                  alt="VSECSchool Management"
                   className="w-full h-auto"
                 />
               </div>
@@ -520,11 +520,11 @@ export default function PortfolioPage() {
                   Education
                 </Badge>
                 <h3 className="text-3xl font-bold">
-                  Radiant Academy School Management
+                  VSEC School Management
                 </h3>
               </div>
               <p className="text-gray-500 dark:text-gray-400">
-                A comprehensive school management system for Radiant Academy in Delhi, featuring student management, attendance tracking, fee collection, and parent communication portal. This solution digitized all school operations and improved administrative efficiency.
+                A comprehensive school management system for VSEC in Kanpur, featuring student management, attendance tracking, fee collection, and parent communication portal. This solution digitized all school operations and improved administrative efficiency.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
