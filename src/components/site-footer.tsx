@@ -159,16 +159,22 @@ export function SiteFooter() {
               Terms
             </Link>
             <Link
-              href="#"
+              href="/privacy-policy"
               className="text-sm text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
             >
               Privacy
             </Link>
             <Link
-              href="#"
+              href="/cookie-policy"
               className="text-sm text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
             >
               Cookies
+            </Link>
+            <Link
+              href="/code-of-conduct"
+              className="text-sm text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+            >
+              Code of Conduct
             </Link>
           </div>
         </div>
