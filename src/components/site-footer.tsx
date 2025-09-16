@@ -153,7 +153,7 @@ export function SiteFooter() {
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0 ml-[15px] mr-[15px]">
             <Link
-              href="#"
+              href="/terms"
               className="text-sm text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
             >
               Terms

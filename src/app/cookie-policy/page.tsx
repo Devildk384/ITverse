@@ -1,151 +1,349 @@
 import Link from "next/link";
 
-export default function CookiePolicyPage() {
+export default function PrivacyPolicyPage() {
   return (
-    <>
-      <section className="relative overflow-hidden py-16 md:py-24">
-        <div className="container relative px-4 md:px-6 mx-auto">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="inline-block rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm text-blue-700 dark:text-blue-300 mb-4">
-                Cookie Policy
-              </div>
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-2">
-                Syslence Cookie Policy
-              </h1>
-              <p className="text-gray-600 dark:text-gray-300">Policy Effective Date: March 15, 2025</p>
+    <section className="relative overflow-hidden py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-3xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-block rounded-full bg-blue-100 dark:bg-blue-900/30 px-4 py-1.5 text-sm text-blue-700 dark:text-blue-300 mb-5">
+              Privacy Policy
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-3">
+              Syslence Privacy Policy
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 text-base">
+              Effective Date: March 15, 2025
+            </p>
+          </div>
+
+          <div className="space-y-10">
+            {/* Introduction */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-2xl p-8 border border-blue-100 dark:border-blue-800">
+              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                Specialist Resources Global Inc. d/b/a Syslence Technologies and our affiliates and subsidiaries ("Syslence," "we," "us," or "our") are committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose and otherwise process the information we collect about you.
+              </p>
             </div>
 
-            <div className="space-y-8">
-              {/* Introduction Section */}
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 rounded-2xl p-8 border border-purple-100 dark:border-purple-800">
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-                  Specialist Resources Global Inc. d/b/a Syslence Technologies and our affiliates and subsidiaries ("Syslence," "we," "us," or "our") are committed to protecting your privacy. This Cookie Policy explains how we and our partners use cookies and similar technologies.
+            {/* GDPR Roles */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-2 border-b-2 border-blue-500 w-fit">
+                GDPR Roles
+              </h2>
+              <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p>
+                  For the purposes of the EU General Data Protection Regulation ("GDPR"), Syslence Technologies India Pvt. Ltd. ("Syslence India") acts as a Data Processor with respect to Personal Information (e.g., patients' data) that Syslence India processes on behalf of its customers through our products and services. We are not responsible for the data privacy practices of our customers, which may differ from ours. If you have any questions about our customers' data privacy practices, please contact them directly.
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  We, our partners, and users of our services deploy cookies and similar technologies to record certain information, as well as the options you have as a data subject to control them.
-                </p>
-              </div>
-
-              {/* What are Cookies Section */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-purple-500 w-fit">What are Cookies?</h2>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Cookies are small pieces of data stored on your device when websites load in a browser. They help provide a consistent and efficient experience and perform essential functions like allowing users to register and remain logged in.
+                <p>
+                  Syslence India is a Data Controller with respect to the Personal Information of: (1) individuals who visit, use, or interact with our websites; and (2) business contacts who represent Syslence India's current and prospective customers, vendors, and partners (collectively, "GDPR Data Subjects"). From time to time, we will supplement this Privacy Policy with additional information about our privacy practices related to a particular activity Syslence undertakes.
                 </p>
               </div>
+            </div>
 
-              {/* How We Use Cookies Section */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-purple-500 w-fit">How We Use Cookies</h2>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  We use cookies to personalize content and ads, provide social media features, and analyze traffic. Some cookies are necessary for technical reasons; others enable personalization for visitors and registered users; and others support advertising from selected third-party networks. Where required by applicable data protection laws (including EU GDPR and India's Information Technology Act, 2000 as amended), we will request your consent for non-essential cookies.
-                </p>
-              </div>
-
-              <h2>Where We Place Cookies</h2>
-              <ul>
-                <li>On our websites</li>
-                <li>In administrative dashboards</li>
-                <li>On sites we host for our users</li>
-                <li>On sites that use our plugins</li>
-                <li>In the emails we send</li>
+            {/* Information Collection */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-2 border-b-2 border-blue-500 w-fit">
+                When We Collect Information
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                We may collect information about you when you:
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Visit our main website (https://syslence.com/) and other websites we own that link to this Privacy Policy (collectively, the 'Sites').",
+                  "Contact us by submitting an online form on the Sites.",
+                  "Communicate with us by email, telephone, mail, or facsimile.",
+                  "Sign up to receive email, mail, or other communications from us.",
+                  "Apply for a job at Syslence.",
+                  "Otherwise interact with Syslence where we refer you to this Privacy Policy.",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">{item}</span>
+                  </li>
+                ))}
               </ul>
-              <p>
-                Some cookies are placed by third-party services that appear on our pages. Your consent (where required) applies across our website via our consent banner.
+            </div>
+
+            {/* Information Types */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-2 border-b-2 border-blue-500 w-fit">
+                What Information We Collect
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                We may collect the following categories of Personal Information:
               </p>
-
-              {/* Categories of Cookies Section */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-purple-500 w-fit">Categories of Cookies</h2>
-                <div className="grid gap-6 md:grid-cols-3">
-                  <div className="bg-green-50 dark:bg-green-950/30 rounded-xl p-6 border border-green-200 dark:border-green-800">
-                    <h3 className="font-semibold text-green-800 dark:text-green-200 mb-3 flex items-center">
-                      <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                      Necessary/Required
+              <div className="grid gap-6 md:grid-cols-2">
+                {[
+                  {
+                    title: "Contact Information",
+                    text: "Name, place of business, job title, postal address, email address, phone number, and other contact details you provide.",
+                  },
+                  {
+                    title: "Financial Information",
+                    text: "Credit card information, bank account details, and other payment information.",
+                  },
+                  {
+                    title: "Job Application Information",
+                    text: "Resume/CV, employment and education history, references, qualifications, and any demographic information you share.",
+                  },
+                  {
+                    title: "Site Usage Information",
+                    text: "Device data, IP address, browser type, pages visited, actions on the Sites, and data collected via cookies and similar technologies.",
+                  },
+                ].map((info, i) => (
+                  <div
+                    key={i}
+                    className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6 border border-gray-200 dark:border-gray-600"
+                  >
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
+                      {info.title}
                     </h3>
-                    <p className="text-green-700 dark:text-green-300 text-sm leading-relaxed">Essential for core site functions, authentication, and storing user preferences (e.g., language, region).</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                      {info.text}
+                    </p>
                   </div>
-                  <div className="bg-blue-50 dark:bg-blue-950/30 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
-                    <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-3 flex items-center">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                      Analytics and Performance
-                    </h3>
-                    <p className="text-blue-700 dark:text-blue-300 text-sm leading-relaxed">Help us understand how visitors use the site so we can improve it.</p>
-                  </div>
-                  <div className="bg-purple-50 dark:bg-purple-950/30 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
-                    <h3 className="font-semibold text-purple-800 dark:text-purple-200 mb-3 flex items-center">
-                      <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-                      Advertising
-                    </h3>
-                    <p className="text-purple-700 dark:text-purple-300 text-sm leading-relaxed">Set by us and our partners to deliver relevant content, assess effectiveness, and support retargeting across sites.</p>
-                  </div>
-                </div>
+                ))}
               </div>
+            </div>
 
-              <h2>Types of Cookies Used</h2>
-              <ul>
-                <li><strong>Technical Cookies</strong>: Enable movement around the site and basic functionality, including remembering actions within a browsing session.</li>
-                <li><strong>Analytical Cookies</strong>: Used by us or third parties to analyze usage and performance (e.g., determining location for localized content).</li>
-                <li><strong>Functionality Cookies</strong>: Remember choices (e.g., language, region) to provide enhanced, more personalized features.</li>
-                <li><strong>Advertising and Retargeting Cookies</strong>: Record interests and browsing paths to enable more relevant advertising, including retargeting by our partners.</li>
+            {/* Legal Basis for Processing */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Legal Basis for Processing
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                We process personal data when we have a lawful basis:
+              </p>
+              <ul className="space-y-3 list-none">
+                {[
+                  "Consent: Where you have freely given consent. You may withdraw consent at any time.",
+                  "Contractual necessity: Where processing is necessary to perform a contract with you.",
+                  "Legal obligation: Where processing is necessary to comply with a legal obligation.",
+                  "Legitimate interests: For example, to provide and improve services, send updates, and monitor performance.",
+                ].map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:mt-2 before:mr-4"
+                  >
+                    {item}
+                  </li>
+                ))}
               </ul>
+            </div>
 
-              <h2>Cookie Declaration</h2>
-              <p>
-                We use cookies to personalize content and ads, provide social media features, and analyze traffic. We may share information about your use of our site with social media, advertising, and analytics partners, who may combine it with other information you provide or they collect from your use of their services.
+            {/* How We Use Your Information */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                How We Use Your Information
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                The following are examples of how we use personal information:
               </p>
-              <p>
-                The law allows us to store strictly necessary cookies on your device without consent. For all other types, we will seek your consent via our cookie banner where required by law. You can change or withdraw your consent at any time via the cookie preferences link in the footer (when implemented).
+              <ul className="space-y-3 list-none">
+                {[
+                  "Respond to you when you contact us.",
+                  "Send messages about special offers and services.",
+                  "Send updates about services you use.",
+                  "Provide our products and services per our agreements.",
+                  "Generate internal reports and analytics.",
+                  "Evaluate candidacy for employment.",
+                  "Serve advertisements on the Sites.",
+                  "Conduct surveys and publish results.",
+                  "Ensure legal compliance and exercise rights.",
+                  "Protect users and ensure Site security.",
+                  "Enable third-party service providers.",
+                  "Investigate and prevent unlawful activities.",
+                  "Facilitate financing, sale, or merger.",
+                ].map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:mt-2 before:mr-4"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* How We Share the Information We Collect */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                How We Share the Information We Collect
+              </h2>
+              <ul className="space-y-3 list-none">
+                {[
+                  "Our corporate affiliates and associates.",
+                  "Third-party service providers supporting our services.",
+                  "Third parties as requested or consented to by you.",
+                  "Companies that acquire our business or assets.",
+                  "Our employees who need access.",
+                  "Courts, legal authorities, and regulators.",
+                  "Tax and customs authorities.",
+                  "To prevent fraud or defend against attacks.",
+                ].map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start before:content-[''] before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:mt-2 before:mr-4"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Cookies and Other Technologies */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Cookies and Other Technologies
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We may use cookies, tracking pixels, and similar technologies. You may adjust
+                browser settings to stop cookies, which may impact Site functionality. See
+                our Cookie Policy for details.
               </p>
-              <p>
-                Learn more about how we process personal data in our <Link href="/privacy-policy">Privacy Policy</Link>.
+            </div>
+
+            {/* Our Policy Towards Children */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Our Policy Towards Children
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Our Services are not directed to children under 16. If we learn we collected
+                such information, please contact us for deletion.
               </p>
+            </div>
 
-              <h2>How to Refuse or Withdraw Consent</h2>
-              <p>
-                If you do not want cookies placed on your device, set your preferences via our cookie banner (where available) or adjust your browser settings. You can also delete stored cookies via your browser. Below are general steps for common browsers (exact steps may vary by version):
+            {/* International Data Transfers */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                International Data Transfers
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We are primarily located in India and operate globally. Your Personal
+                Information may be transferred internationally. By using our Sites, you
+                acknowledge such transfers.
               </p>
+            </div>
 
-              <h3>Chrome</h3>
-              <p>Preferences → Advanced → Privacy and security → Content settings → Cookies.</p>
+            {/* Security of Personal Information */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Security of Personal Information
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We implement reasonable technical, physical, and administrative safeguards.
+                However, no method is completely secure.
+              </p>
+            </div>
 
-              <h3>Mozilla Firefox</h3>
-              <p>Preferences → Privacy & Security → Cookies and Site Data.</p>
+            {/* Retention of Personal Information */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Retention of Personal Information
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We retain data as long as necessary for purposes collected, compliance, and
+                legal obligations.
+              </p>
+            </div>
 
-              <h3>Microsoft Edge/Internet Explorer</h3>
-              <p>Settings/Internet Options → Privacy → Cookies controls.</p>
+            {/* Right to Opt Out of Marketing */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Right to Opt Out of Marketing
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                To opt out of marketing, click the unsubscribe link or contact us. You may
+                still receive administrative communications.
+              </p>
+            </div>
 
-              <h3>Safari</h3>
-              <p>Preferences → Privacy → Cookies and website data.</p>
+            {/* Your Rights based on Jurisdiction */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Your Rights based on Jurisdiction
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                <strong>For EEA Users:</strong> GDPR Data Subjects have rights to access,
+                rectify, delete, restrict, object, portability, and complain to a supervisory
+                authority.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                <strong>UK ICO:</strong> Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9
+                5AF
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                <strong>For California Users:</strong> California residents may request
+                information on how Personal Information has been shared for third-party
+                marketing.
+              </p>
+            </div>
 
-              {/* Contact Section */}
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 rounded-2xl p-8 border border-purple-100 dark:border-purple-800">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-purple-500 w-fit">Contact Syslence</h2>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  If you have any questions or comments about our Cookie Policy, please email <a href="mailto:privacy@syslence.com" className="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 font-medium underline decoration-2 underline-offset-2 hover:decoration-purple-800 dark:hover:decoration-purple-300 transition-colors">privacy@syslence.com</a>.
-                </p>
-              </div>
+            {/* Do Not Track */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Do Not Track
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We do not currently respond to Do Not Track signals. We will monitor
+                developments.
+              </p>
+            </div>
 
-              {/* Navigation */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Looking for something else?
-                </p>
-                <Link 
-                  href="/" 
-                  className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+            {/* Third-Party Links */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Third-Party Links
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                The Sites may contain external links. We are not responsible for their
+                privacy practices.
+              </p>
+            </div>
+
+            {/* Changes to this Privacy Policy */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                Changes to this Privacy Policy
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                We may modify this Privacy Policy. If material changes are made, we will
+                notify you.
+              </p>
+            </div>
+
+
+            {/* Navigation */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Looking for something else?
+              </p>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+              >
+                Return to Home
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  Return to Home
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                  </svg>
-                </Link>
-              </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
-} 
+}

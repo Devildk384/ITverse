@@ -57,48 +57,42 @@ export default function CodeOfConductPage() {
                 </p>
               </div>
 
-              {/* Harassment Section */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-red-500 w-fit">Harassment and Workplace Violence</h2>
-                <div className="bg-red-50 dark:bg-red-950/30 rounded-xl p-6 border border-red-200 dark:border-red-800 mb-6">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0">
-                      <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-0.5">
-                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-red-800 dark:text-red-200 mb-2">Zero Tolerance Policy</h3>
-                      <p className="text-red-700 dark:text-red-300 text-sm leading-relaxed">
-                        Every Syslence employee has the right to work in an environment free of harassment. Harassment of any kind will not be tolerated based on protected characteristics including, but not limited to, sex, age, race, color, national origin, disability, religion, marital status, veteran status, sexual orientation, or gender identity.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  We foster a culture of learning, mutual respect, professionalism, and individual accountability. Any form of harassment is strictly prohibited. Degrading or humiliating jokes, slurs, intimidation, or other harassing conduct is not acceptable. This includes unwelcome sexual advances or requests for sexual favors in connection with employment decisions, and verbal or physical conduct of a sexual nature that interferes with work performance or creates an intimidating, hostile, or offensive work environment. Conduct or communications that intimidate and create barriers to performance are not tolerated at Syslence.
-                </p>
+              <div className="max-w-4xl mx-auto p-6 space-y-6">
+                {/* Reporting Concerns Box */}
+                <section className="bg-white rounded-2xl shadow-md p-6 space-y-4">
+                  <h2 className="text-2xl font-bold text-gray-800">Reporting Concerns</h2>
+                  <p className="text-gray-700 leading-relaxed">
+                    If you believe you have been subjected to conduct that violates this policy, report the matter immediately to any manager.
+                    If you cannot contact a manager or do not receive a satisfactory response within five (5) business days, contact the Human Resources Department.
+                    If the person toward whom the complaint is directed is one of the above, escalate to any higher-level manager in your reporting hierarchy.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Every report of perceived harassment or misconduct will be fully investigated and corrective action will be taken where appropriate.
+                    Violations of this policy may result in disciplinary action, up to and including discharge.
+                  </p>
+                </section>
+
+                {/* Confidentiality and Non-Retaliation Box */}
+                <section className="bg-white rounded-2xl shadow-md p-6 space-y-4">
+                  <h2 className="text-2xl font-bold text-gray-800">Confidentiality and Non-Retaliation</h2>
+                  <p className="text-gray-700 leading-relaxed">
+                    All harassment complaints will be kept confidential to the extent possible, consistent with the need to investigate.
+                    Syslence prohibits retaliation against individuals who report concerns in good faith or who cooperate in investigations.
+                    Employees who make complaints in bad faith may be subject to disciplinary action, up to and including discharge.
+                    All employees must cooperate with investigations.
+                  </p>
+                </section>
+
+                {/* Compliance with Indian Law Box */}
+                <section className="bg-white rounded-2xl shadow-md p-6 space-y-4">
+                  <h2 className="text-2xl font-bold text-gray-800">Compliance with Indian Law</h2>
+                  <p className="text-gray-700 leading-relaxed">
+                    This Code of Conduct is intended to align with applicable Indian labor and employment laws and regulations.
+                    Where specific procedures or standards are mandated by law (for example, under the POSH Act regarding prevention of sexual harassment),
+                    Syslence will follow those legal requirements. Additional local policies and procedures may apply.
+                  </p>
+                </section>
               </div>
-
-              <h2>Reporting Concerns</h2>
-              <p>
-                If you believe you have been subjected to conduct that violates this policy, report the matter immediately to any manager. If you cannot contact a manager or do not receive a satisfactory response within five (5) business days, contact the Human Resources Department. If the person toward whom the complaint is directed is one of the above, escalate to any higher-level manager in your reporting hierarchy.
-              </p>
-              <p>
-                Every report of perceived harassment or misconduct will be fully investigated and corrective action will be taken where appropriate. Violations of this policy may result in disciplinary action, up to and including discharge.
-              </p>
-
-              <h2>Confidentiality and Non-Retaliation</h2>
-              <p>
-                All harassment complaints will be kept confidential to the extent possible, consistent with the need to investigate. Syslence prohibits retaliation against individuals who report concerns in good faith or who cooperate in investigations. Employees who make complaints in bad faith may be subject to disciplinary action, up to and including discharge. All employees must cooperate with investigations.
-              </p>
-
-              <h2>Compliance with Indian Law</h2>
-              <p>
-                This Code of Conduct is intended to align with applicable Indian labor and employment laws and regulations. Where specific procedures or standards are mandated by law (for example, under the POSH Act regarding prevention of sexual harassment), Syslence will follow those legal requirements. Additional local policies and procedures may apply.
-              </p>
 
               {/* Contact Section */}
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 rounded-2xl p-8 border border-green-100 dark:border-green-800">
@@ -113,8 +107,8 @@ export default function CodeOfConductPage() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Looking for something else?
                 </p>
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
                 >
                   Return to Home

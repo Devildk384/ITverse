@@ -95,105 +95,95 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              <h2>Legal Basis for Processing</h2>
-              <p>We process personal data when we have a lawful basis:</p>
-              <ul>
-                <li><strong>Consent</strong>: Where you have freely given consent. You may withdraw consent at any time using the contact details below.</li>
-                <li><strong>Contractual necessity</strong>: Where processing is necessary to perform a contract with you.</li>
-                <li><strong>Legal obligation</strong>: Where processing is necessary to comply with a legal obligation.</li>
-                <li><strong>Legitimate interests</strong>: For example, to provide and improve our services, send updates, and monitor performance.</li>
-              </ul>
+              {/* Legal Basis for Processing */}
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                  Legal Basis for Processing
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  We process personal data when we have a lawful basis:
+                </p>
+                <ul className="space-y-3 list-none">
+                  {[
+                    "Consent: Where you have freely given consent. You may withdraw consent at any time using the contact details below.",
+                    "Contractual necessity: Where processing is necessary to perform a contract with you.",
+                    "Legal obligation: Where processing is necessary to comply with a legal obligation.",
+                    "Legitimate interests: For example, to provide and improve our services, send updates, and monitor performance.",
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start before:content-[''] before:flex-shrink-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:mt-2 before:mr-4"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <h2>How We Use Your Information</h2>
-              <p>The following are examples of how we use personal information and the legal bases we rely on (for GDPR Data Subjects):</p>
-              <ul>
-                <li>Respond to you when you contact us (Legitimate interests; Performance of a contract).</li>
-                <li>Send messages about special offers and products/services (Legitimate interests).</li>
-                <li>Send updates about products/services you use and customer service communications (Legitimate interests; Performance of a contract).</li>
-                <li>Provide our products and services per our agreements (Legitimate interests; Performance of a contract).</li>
-                <li>Generate internal reports and analytics to improve user experience (Legitimate interests).</li>
-                <li>Evaluate candidacy for employment (Legitimate interests; Consent).</li>
-                <li>Serve advertisements on the Sites (Legitimate interests).</li>
-                <li>Conduct surveys and publish results (Legitimate interests; Consent depending on jurisdiction).</li>
-                <li>Ensure legal compliance and exercise legal rights (Legitimate interests; Legal obligation).</li>
-                <li>Protect users, third parties, and our rights and property, and ensure Site security (Legitimate interests).</li>
-                <li>Carry out internal functions such as information management, account processing, and client services (Legitimate interests).</li>
-                <li>Enable third-party service providers to support our services (Legitimate interests; Performance of a contract).</li>
-                <li>Investigate and prevent unlawful or harmful activities (Legitimate interests).</li>
-                <li>Facilitate financing, sale, merger, or reorganization (Legitimate interests).</li>
-              </ul>
+              {/* How We Use Your Information */}
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                  How We Use Your Information
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  The following are examples of how we use personal information and the legal bases we rely on (for GDPR Data Subjects):
+                </p>
+                <ul className="space-y-3 list-none">
+                  {[
+                    "Respond to you when you contact us (Legitimate interests; Performance of a contract).",
+                    "Send messages about special offers and products/services (Legitimate interests).",
+                    "Send updates about products/services you use and customer service communications (Legitimate interests; Performance of a contract).",
+                    "Provide our products and services per our agreements (Legitimate interests; Performance of a contract).",
+                    "Generate internal reports and analytics to improve user experience (Legitimate interests).",
+                    "Evaluate candidacy for employment (Legitimate interests; Consent).",
+                    "Serve advertisements on the Sites (Legitimate interests).",
+                    "Conduct surveys and publish results (Legitimate interests; Consent depending on jurisdiction).",
+                    "Ensure legal compliance and exercise legal rights (Legitimate interests; Legal obligation).",
+                    "Protect users, third parties, and our rights and property, and ensure Site security (Legitimate interests).",
+                    "Carry out internal functions such as information management, account processing, and client services (Legitimate interests).",
+                    "Enable third-party service providers to support our services (Legitimate interests; Performance of a contract).",
+                    "Investigate and prevent unlawful or harmful activities (Legitimate interests).",
+                    "Facilitate financing, sale, merger, or reorganization (Legitimate interests).",
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start before:content-[''] before:flex-shrink-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:mt-2 before:mr-4"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <h2>How We Share the Information We Collect</h2>
-              <p>We may share Personal Information with:</p>
-              <ul>
-                <li>Our corporate affiliates and associates (e.g., parent, subsidiaries, or other companies under common control).</li>
-                <li>Third-party service providers supporting the administration, provision, and marketing of our products, services, and the Sites.</li>
-                <li>Third parties as requested, directed, or consented to by you.</li>
-                <li>Companies that acquire or plan to acquire our company, business, or assets.</li>
-                <li>Our employees who need to know to help provide services or process information on our behalf.</li>
-                <li>Courts, governmental bodies, and legal authorities as required by law or legal process.</li>
-                <li>Relevant tax, payments, and customs authorities (which may share with authorities in other jurisdictions).</li>
-                <li>To prevent or respond to fraud, defend our websites against attacks, or protect the property and safety of Syslence, users, or the public.</li>
-              </ul>
+              {/* How We Share the Information We Collect */}
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-blue-500 w-fit">
+                  How We Share the Information We Collect
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  We may share Personal Information with:
+                </p>
+                <ul className="space-y-3 list-none">
+                  {[
+                    "Our corporate affiliates and associates (e.g., parent, subsidiaries, or other companies under common control).",
+                    "Third-party service providers supporting the administration, provision, and marketing of our products, services, and the Sites.",
+                    "Third parties as requested, directed, or consented to by you.",
+                    "Companies that acquire or plan to acquire our company, business, or assets.",
+                    "Our employees who need to know to help provide services or process information on our behalf.",
+                    "Courts, governmental bodies, and legal authorities as required by law or legal process.",
+                    "Relevant tax, payments, and customs authorities (which may share with authorities in other jurisdictions).",
+                    "To prevent or respond to fraud, defend our websites against attacks, or protect the property and safety of Syslence, users, or the public.",
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start before:content-[''] before:flex-shrink-0 before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:mt-2 before:mr-4"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <h2>Cookies and Other Technologies</h2>
-              <p>
-                We may use cookies, tracking pixels/web beacons, and similar technologies. These may include: (1) strictly necessary; (2) user choices; (3) marketing; and (4) third-party cookies. These technologies help us understand behavior, improve the Sites, and measure effectiveness of content and ads. You may adjust browser settings to stop or restrict cookies, which may impact Site functionality. See our Cookie Policy for details.
-              </p>
-
-              <h2>Our Policy Towards Children</h2>
-              <p>
-                Our Services are not directed to children under 16. If you are under 16, you are not permitted to use the Sites or disclose Personal Information. If we learn we collected Personal Information from a child under 16, please contact us to request deletion.
-              </p>
-
-              <h2>International Data Transfers</h2>
-              <p>
-                We are primarily located in India and also operate globally. Your Personal Information may be transferred to and processed in countries that may have different data protection laws, including the United States. By providing Personal Information and using the Sites, you acknowledge such transfers. If you are in the EEA and would like more information on safeguards, contact us using the details below.
-              </p>
-
-              <h2>Security of Personal Information</h2>
-              <p>
-                We implement reasonable technical, physical, and administrative measures to protect Personal Information (e.g., access controls, HTTPS, restricted data access, threat monitoring). However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.
-              </p>
-
-              <h2>Retention of Personal Information</h2>
-              <p>
-                We retain Personal Information as long as necessary for the purposes collected, to comply with legal obligations, and to protect our legitimate interests. We take reasonable steps to delete or de-identify data that is no longer needed.
-              </p>
-
-              <h2>Right to Opt Out of Marketing</h2>
-              <p>
-                To opt out of marketing, click the unsubscribe link in our emails or contact us using the details below. You may still receive administrative or legally required communications.
-              </p>
-
-              <h2>Your Rights based on Jurisdiction</h2>
-              <h3>For EEA Users</h3>
-              <p>
-                GDPR Data Subjects have rights to access, rectify, delete, restrict, object, and data portability, and to complain to a supervisory authority. To exercise rights, contact us using the details below. We will respond without unreasonable delay and within applicable legal timeframes.
-              </p>
-              <p>
-                UK Information Commissioner’s Office (ICO): c/o Casework, Information Commissioner’s Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF
-              </p>
-
-              <h3>For California Users</h3>
-              <p>
-                California residents may request information on how Personal Information has been shared for third parties’ direct marketing purposes, no more than once per calendar year, using the contact details below.
-              </p>
-
-              <h2>Do Not Track</h2>
-              <p>
-                We do not currently respond to Do Not Track signals due to the lack of an industry standard. We will monitor developments and update our practices if standards emerge.
-              </p>
-
-              <h2>Third-Party Links</h2>
-              <p>
-                The Sites may contain links to external websites not affiliated with Syslence. Your use of those sites is governed by their own policies and terms. We are not responsible for their privacy practices.
-              </p>
-
-              <h2>Changes to this Privacy Policy</h2>
-              <p>
-                We may modify or update this Privacy Policy from time to time. If we make material changes to how we process Personal Information, we will notify you before those changes apply.
-              </p>
 
               {/* Contact Section */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-2xl p-8 border border-blue-100 dark:border-blue-800">
@@ -208,8 +198,8 @@ export default function PrivacyPolicyPage() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Looking for something else?
                 </p>
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
                 >
                   Return to Home
