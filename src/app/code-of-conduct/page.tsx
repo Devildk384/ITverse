@@ -20,7 +20,7 @@ export default function CodeOfConductPage() {
               {/* Introduction Section */}
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 rounded-2xl p-8 border border-green-100 dark:border-green-800">
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                  All employees are responsible for knowing and abiding by Syslence's rules and policies. Syslence prides itself on meeting high standards of ethical and personal conduct across its operations in India and globally. You are expected to maintain the highest ethical standards and perform your duties in good faith and to the best of your abilities at all times when engaged in Syslence business.
+                  All employees are responsible for knowing and abiding by Syslence&#39;s rules and policies. Syslence prides itself on meeting high standards of ethical and personal conduct across its operations in India and globally. You are expected to maintain the highest ethical standards and perform your duties in good faith and to the best of your abilities at all times when engaged in Syslence business.
                 </p>
               </div>
 
@@ -28,7 +28,7 @@ export default function CodeOfConductPage() {
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-green-500 w-fit">Discipline</h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  At Syslence's discretion, employees may be disciplined or terminated for violating any policy or rule. Syslence may discipline or terminate employees for engaging in any conduct it deems inappropriate. Employees are expected to use good judgment in all actions and consult supervisors or Human Resources if there is any doubt as to whether intended conduct aligns with Syslence standards.
+                  At Syslence&#39;s discretion, employees may be disciplined or terminated for violating any policy or rule. Syslence may discipline or terminate employees for engaging in any conduct it deems inappropriate. Employees are expected to use good judgment in all actions and consult supervisors or Human Resources if there is any doubt as to whether intended conduct aligns with Syslence standards.
                 </p>
               </div>
 
@@ -123,4 +123,4 @@ export default function CodeOfConductPage() {
       </section>
     </>
   );
-} 
+}
