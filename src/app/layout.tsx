@@ -2,6 +2,8 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { MainNav } from "@/components/main-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -38,6 +40,8 @@ export default function RootLayout({
             <SiteFooter />
           </div>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
